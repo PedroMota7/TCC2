@@ -5,6 +5,7 @@
     
     <title> Cadastro Usuário</title>
     <link rel="stylesheet" href="../style/geral.css">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -19,7 +20,7 @@
        
         <div class="container">
             <form id="cpfForm" action="../php/valida_usuario.php" method="post">
-                <form id="cpfForm" action="../php/edit.user.php" method="post">
+                <form id="cpfForm" action="../php/editar_usuario.php" method="post">
                 <div class="box-cad">
                     <h1>Cadastro de Usuário</h1>
                     <br>
@@ -46,7 +47,8 @@
                     <input type="number" placeholder="Insira o telefone" class="form-control"  name= "tel" id="tel">
                 </div>
                 <br>
-               <input type="submit" value="Entrar">
+                <button type="submit">Cadastrar</button>
+               
             </form>
         </div>
     </main>

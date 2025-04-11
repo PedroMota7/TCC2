@@ -11,7 +11,7 @@
     --branco:#fff;
     --teste:aqua;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-image: url(../img/pic.jpeg);
+    background-image: url(../img/fundo-52.png);
 }
 
 header{
@@ -43,8 +43,8 @@ a{
     box-shadow: 0 2px 4px rgba(3, 3, 3, 0.082);
     width: 350px;
     height: 300px;
-    margin-top: 15%;   
-    margin-right: 11%;
+    margin-top: 19%;   
+    margin-right: 3%;
 
 }
  

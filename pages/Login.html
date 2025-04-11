@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Login</title>
+    <link rel="stylesheet" href="../style/geral.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href= "inicio.html">Início</a>
+            <a href="suporte.html">Suporte</a>  
+        
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <form action="../php/valida_login_adm.php" method="post">
+                <div class="box-cad">
+                    <h1>Login ADM</h1>
+                    <br>
+                    <label for="Email" class="form-label"></label>
+                    <input type="text" placeholder="Insira seu e-mail" class="form-control" name="email" id="email" aria-describedby="emailAdm" required>
+                </div>
+                <div class="box-cad">
+                    <label for="senha" class="form-label"></label>
+                    <input type="password" placeholder="Insira sua senha" class="form-control"name="senha" id="senha" required><br>
+                    <br>
+                    <a href="#">Esqueci a senha</a>
+                    <a href="cadastro_user.html"><input type="submit" value="Entrar"></a>
+            
+                
+
+
+                </form>
+        </div>
+        
+
+    </main>
+
+    <footer></footer>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    
+    <title> Cadastro Usuário</title>
+    <link rel="stylesheet" href="../style/geral.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href= "inicio.html" href="#">Início</a>
+            <a href="suporte.html">Suporte</a>  
+            <a href="inicio.html"><button type="submit" class="btn">Sair</button></a>
+        </nav>
+    </header>
+
+    <main>
+       
+        <div class="container">
+            <form id="cpfForm" action="../php/valida_usuario.php" method="post">
+                <form id="cpfForm" action="../php/edit.user.php" method="post">
+                <div class="box-cad">
+                    <h1>Cadastro de Usuário</h1>
+                    <label for="Nome" class="form-label" ></label>
+                    <input type="text" placeholder="Insira o nome" class="form-control" name="nome" id="Nome" aria-describedby="NomeAdm">
+                </div>
+                <div class="box-cad">
+                    <label for="Cpf" class="form-label"></label>
+                    <input type="text" name= "cpf"\
+                    pattern="\d{3}\.\d{3}\.\d{3}\-\d{2}" \
+                    placeholder="Digite seu CPF" id="cpf">
+                </div>
+                <div class="box-cad">
+                    <label for="Email" class="form-label"></label>
+                    <input type="email" placeholder="Insira o Email" class="form-control"  name="email" id="email">
+                </div>
+                <div class="box-cad">
+                    <label for="date" class="form-label"></label>
+                    <input type="date" placeholder="Insira a Data de Nascimento" class="form-control" name="data" id="date">
+                </div>
+            
+                <div class="box-cad">
+                    <label for="Confsenha" class="form-label"></label>
+                    <input type="number" placeholder="Insira o telefone" class="form-control"  name= "tel" id="tel">
+                </div>
+               <input type="submit" value="Entrar">
+            </form>
+        </div>
+    </main>
+
+    <footer></footer>
+    
+</body>
+</html>

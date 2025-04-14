@@ -16,11 +16,41 @@
         </nav>
     </header>
 
-    <main>
-       
+    <main> 
+        <!-- <section>
+            <table border=1>
+                <tr>
+                    <td>ID</td>
+                    <td>Nome</td>
+                    <td>CPF</td>
+                    <td>Email</td>
+                    <td>Data de nascimento</td>
+                    <td>Telefone</td>
+                </tr>
+                <tr>
+                    <form action="../php/editar_usuario.php">
+                        <td><input type="hidden" name="c_id" ></td>
+                        <td><input type="text" name="c_nome"></td>
+                        <td><input type="text" name="c_cpf"></td>
+                        <td><input type="text" name="c_email"></td>
+                        <td><input type="text" name="c_data"></td>
+                        <td><input type="text" name="c_tel"></td>
+                        <td><input type="submit" value="Alterar"></td>
+                    </form>
+                    <td>
+                        <form method="post" action="../php/editar_usuario.php">
+                            <INPUT type="hidden" name="c_exc">	
+                            <input type="submit" value="Excluir">
+                        </form>
+                    </td>
+                </tr>
+                </form>
+            </table>
+        </section> -->
+        
+        
         <div class="container">
-            <form id="cpfForm" action="../php/valida_usuario.php" method="post">
-                <form id="cpfForm" action="../php/editar_usuario.php" method="post">
+            <form action="../php/valida_usuario.php">
                 <div class="box-cad">
                     <h1>Cadastro de Usuário</h1>
                     <br>
@@ -48,9 +78,9 @@
                 </div>
                 <br>
                 <button type="submit">Cadastrar</button>
-               
             </form>
         </div>
+
     </main>
 
     <footer></footer>

@@ -1,3 +1,4 @@
+
 <?php
 
 $nome_adm = $_POST['nome'];
@@ -5,6 +6,7 @@ $email_adm = $_POST['email'];
 $cpf_adm = $_POST['cpf'];
 $cnpj_emp = $_POST['cnpj'];
 $senha_adm = $_POST['senha'];
+
 
 
 $abc = mysqli_connect('localhost', 'root', NULL, 'tcc');
@@ -31,9 +33,5 @@ if ($result2) {
 
 mysqli_close($abc);
 ?>
-
-<form method="post" action="editar_usuario.php">
-<INPUT type="hidden" name="edit_excl"/>
-<input type="submit" value="Editar/Excluir"/> 
 </form>
  

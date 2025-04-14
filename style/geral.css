@@ -11,7 +11,7 @@
     --branco:#fff;
     --teste:aqua;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-image: url(../img/fundo-52.png);
+    background-image: url(../img/fundo.png);
 }
 
 header{
@@ -62,6 +62,10 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 9px;
+    gap: 7px;
+}
+
+button :hover{
+
 }
 

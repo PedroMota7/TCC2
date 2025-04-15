@@ -32,7 +32,7 @@
             $nome = $tbl['NOME'];
             $cpf = $tbl['CPF'];
             $email = $tbl['EMAIL'];
-            $data = date('Y-m-d');
+            $data = $tbl['DATA_NASC'];
             $TEL = $tbl['TELEFONE'];
              
         ?>

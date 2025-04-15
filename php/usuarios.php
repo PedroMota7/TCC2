@@ -9,11 +9,15 @@
 <body>
     <table border="1">
         <tr>
+            <td>ID</td>
             <td>Nome</td>
             <td>CPF</td>
             <td>email</td>
             <td>data</td>
             <td>telefone</td>
+            <td>Açao</td>
+           
+           
         </tr>
 
         <?php
@@ -28,7 +32,7 @@
         }
 
         while ($tbl = mysqli_fetch_array($result)) {
-
+            $id   = $tbl['ID'];
             $nome = $tbl['NOME'];
             $cpf = $tbl['CPF'];
             $email = $tbl['EMAIL'];
@@ -38,11 +42,13 @@
         ?>
 
             <tr>
+                <td><?php echo $id; ?></td>
                 <td><?php echo $nome; ?></td>
                 <td><?php echo $cpf; ?></td>
                 <td><?php echo $email; ?></td>
                 <td><?php echo $data; ?></td>
                 <td><?php echo $TEL; ?></td>
+               <td><a href="editar_usuario.php?id=<?php echo $id; ?>"><button type="submit" class="btn">Editar</button></a></td>
             </tr>
 
         <?php

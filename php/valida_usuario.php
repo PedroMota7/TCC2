@@ -1,4 +1,4 @@
-<?php
+c
 
 $nome = $_POST['nome'];
 $cpf = $_POST['cpf'];

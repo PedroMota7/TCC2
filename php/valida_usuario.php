@@ -1,9 +1,9 @@
-c
+<?php
 
 $nome = $_POST['nome'];
 $cpf = $_POST['cpf'];
 $email = $_POST['email'];
-$data = date('Y-m-d');
+$data = $_POST['data'];
 $TEL = $_POST['tel'];
  
 
@@ -20,7 +20,8 @@ $sql = "INSERT INTO db_use (ID, NOME, CPF, EMAIL, DATA_NASC, TELEFONE)
 $result2 = mysqli_query($abc, $sql);
 
 if ($result2) {
-    echo "Cadastro realizado com sucesso!";
+    sleep(1);
+	header('location:usuarios.php');
 
 } else {
     echo "Erro ao cadastrar: " . mysqli_error($abc);

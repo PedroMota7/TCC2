@@ -12,46 +12,17 @@
         <nav>
             <a href= "inicio.html" href="#">Início</a>
             <a href="suporte.html">Suporte</a> 
-            <a href="../php/edit_user.php">Usuarios</a>   
+            <a href="../php/usuarios.php">Usuarios</a>   
             <a href="inicio.html"><button type="submit" class="btn">Sair</button></a>
         </nav>
     </header>
 
     <main> 
-        <!-- <section>
-            <table border=1>
-                <tr>
-                    <td>ID</td>
-                    <td>Nome</td>
-                    <td>CPF</td>
-                    <td>Email</td>
-                    <td>Data de nascimento</td>
-                    <td>Telefone</td>
-                </tr>
-                <tr>
-                    <form action="../php/editar_usuario.php">
-                        <td><input type="hidden" name="c_id" ></td>
-                        <td><input type="text" name="c_nome"></td>
-                        <td><input type="text" name="c_cpf"></td>
-                        <td><input type="text" name="c_email"></td>
-                        <td><input type="text" name="c_data"></td>
-                        <td><input type="text" name="c_tel"></td>
-                        <td><input type="submit" value="Alterar"></td>
-                    </form>
-                    <td>
-                        <form method="post" action="../php/editar_usuario.php">
-                            <INPUT type="hidden" name="c_exc">	
-                            <input type="submit" value="Excluir">
-                        </form>
-                    </td>
-                </tr>
-                </form>
-            </table>
-        </section> -->
-        
+
+
         
         <div class="container">
-            <form action="../php/valida_usuario.php">
+            <form action="../php/valida_usuario.php" method="post">
                 <div class="box-cad">
                     <h1>Cadastro de Usuário</h1>
                     <br>
@@ -70,7 +41,7 @@
                 </div>
                 <div class="box-cad">
                     <label for="date" class="form-label"></label>
-                    <input type="date" placeholder="Insira a Data de Nascimento" class="form-control" name="data" id="date">
+                    <input type="date" placeholder="Insira a Data de Nascimento" class="form-control" name="data" id="data">
                 </div>
             
                 <div class="box-cad">

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03/04/2025 às 04:25
+-- Tempo de geração: 16/04/2025 às 05:57
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,8 +41,7 @@ CREATE TABLE `adm` (
 --
 
 INSERT INTO `adm` (`ID`, `NOME`, `email`, `CPF`, `cnpj`, `senha`) VALUES
-(12, 'taypan palmeira de Oliveira', 'taypanpalemira32@gmail.com', '103123101', '123456', '123'),
-(13, 'MARCOS', 'taypanpalemira32@gmail.com', '1031233', '7856', '123');
+(54, 'José Alves ', 'jose@gmail.com', '470.731.150-41', '123', '123');
 
 -- --------------------------------------------------------
 
@@ -64,8 +63,7 @@ CREATE TABLE `db_use` (
 --
 
 INSERT INTO `db_use` (`ID`, `NOME`, `CPF`, `EMAIL`, `DATA_NASC`, `TELEFONE`) VALUES
-(1, 'taypa', '4558546', 'taypanpalmeira2005@gmail.com', '2025-04-03', ''),
-(2, 'taypa', '4558546', 'taypanpalmeira2005@gmail.com', '2025-04-03', '213453453');
+(27, 'Alex Machado Souza ', '724.964.960-44', 'alex@gmail.com', '1994-03-19', '(82) 93528-9427');
 
 --
 -- Índices para tabelas despejadas
@@ -91,13 +89,13 @@ ALTER TABLE `db_use`
 -- AUTO_INCREMENT de tabela `adm`
 --
 ALTER TABLE `adm`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT de tabela `db_use`
 --
 ALTER TABLE `db_use`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

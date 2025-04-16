@@ -9,7 +9,6 @@
 <body>
     <header>
         <nav>
-            <img src="../img/logo preta.png" width="5%" alt="">
             <a href="inicio.html">Início</a>
             <a href="suporte.html">Suporte</a>  
             <a href="Login.html"><button type="submit" class="btn">Login</button></a>
@@ -18,7 +17,7 @@
 
     <main>
         <div class="container">
-
+           <form id="cnpjForm" action="../php/Cadastro_adm.php" method="post"></form>
            <form id="cpfForm" action="../php/Cadastro_adm.php" method="post" onsubmit="return validarSenhas()">
                 <div class="box-cad">
                     <h1>Cadastro de Administrador</h1>
@@ -36,7 +35,7 @@
                 </div>
                 <div class="box-cad">
                     <label for="cnpj" class="form-label"></label>
-                    <input type="text" id="cnpj" name= "cnpj" pattern="\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}" maxlength="17" placeholder="Digite seu CNPJ" id="cnpj" required>
+                    <input type="text" id="cnpj" name= "cnpj" pattern="\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}" maxlength="18" placeholder="Digite seu CNPJ" id="cnpj" required>
                 </div>
                 <div class="box-cad">
                     <label for="senha" class="form-label"></label>

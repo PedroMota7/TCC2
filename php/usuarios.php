@@ -15,7 +15,6 @@
             <td>email</td>
             <td>data</td>
             <td>telefone</td>
-            <td>Açôes</td>
         </tr>
         
 

@@ -40,6 +40,14 @@ else
 	 HEADER('Location:../pages/cadastro_user.html'); 
 }
 
+// if(isset get['bt'])
+// {
+// $_SESSION['autenticado'] = 'NAO';
+// 	session_destroy();
+// 	sleep(2);
+// 	header("Location:TCC2\pages\cadastro_user.html");
+// }
+
 
 mysqli_close($abc);
 

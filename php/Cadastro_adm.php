@@ -7,6 +7,7 @@ $cpf_adm = $_POST['cpf'];
 $cnpj_emp = $_POST['cnpj'];
 $senha_adm = $_POST['senha'];
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha = $_POST['senha'];
     $confirmarSenha = $_POST['confirmarSenha'];
@@ -33,6 +34,8 @@ if ($result2) {
  else {
     echo "Erro ao cadastrar: " . mysqli_error($abc);
 }
+
+
 
 mysqli_close($abc);
 ?>

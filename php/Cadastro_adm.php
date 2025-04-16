@@ -7,7 +7,10 @@ $cpf_adm = $_POST['cpf'];
 $cnpj_emp = $_POST['cnpj'];
 $senha_adm = $_POST['senha'];
 
-
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $senha = $_POST['senha'];
+    $confirmarSenha = $_POST['confirmarSenha'];
+}
 
 $abc = mysqli_connect('localhost', 'root', NULL, 'tcc');
 
@@ -33,5 +36,4 @@ if ($result2) {
 
 mysqli_close($abc);
 ?>
-</form>
  

@@ -17,7 +17,7 @@
     <main>
         <div class="container">
 
-           <form id="cpfForm" action="../php/Cadastro_adm.php" method="post">
+           <form id="cpfForm" action="../php/Cadastro_adm.php" method="post" onsubmit="return validarSenhas()">
                 <div class="box-cad">
                     <h1>Cadastro de Administrador</h1>
                     <br>
@@ -42,12 +42,24 @@
                 </div>
                 <div class="box-cad">
                     <label for="Confsenha" class="form-label"></label>
-                    <input type="password" placeholder="Confirme a senha" class="form-control" name="conf" id="Confsenha" required>
+                    <input type="password" placeholder="Confirme a senha" class="form-control" id="confirmarSenha" name="confirmarSenha" required>
                 </div>
                 <input type="submit" value="Cadastrar"/> 
             </form>
         </div>
     </main>
+    <script>
+        function validarSenhas() {
+            const senha = document.getElementById('senha').value;
+            const confirmarSenha = document.getElementById('confirmarSenha').value;
+        
+            if (senha !== confirmarSenha) {
+                alert('As senhas não coincidem. Por favor, tente novamente.');
+                return false;
+            }
+            return true;
+        }
+        </script>
     <script>
         function validaCPF(cpf) {
             cpf = cpf.replace(/\D+/g, '');

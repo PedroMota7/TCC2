@@ -15,10 +15,9 @@
             <td>email</td>
             <td>data</td>
             <td>telefone</td>
-            <td>Açao</td>
-           
-           
+            <td>Açôes</td>
         </tr>
+        
 
         <?php
         $abc = mysqli_connect('localhost', 'root', NULL, 'tcc')
@@ -49,6 +48,8 @@
                 <td><?php echo $data; ?></td>
                 <td><?php echo $TEL; ?></td>
                <td><a href="editar_usuario.php?id=<?php echo $id; ?>"><button type="submit" class="btn">Editar</button></a></td>
+               <td><a href="excluir_usuario.php?id=<?php echo $id; ?>"><button class="btn" onclick="if(confirm('Tem certeza que deseja excluir este usuário?'))
+                { window.location.href='excluir_usuario.php?id=<?php echo $id; ?>'; }"> Excluir </button></a></td>
             </tr>
 
         <?php

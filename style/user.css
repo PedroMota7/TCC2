@@ -1,3 +1,8 @@
+:root{
+    background-image: url(../img/fundo_semlogo.png);
+}
+
+
 table{
     display: flex;
     justify-content: center;
@@ -7,25 +12,37 @@ table{
 
 
 td{
-    border: rgb(145, 255, 0);
+    height: 25px;
     background-color: rgba(254, 254, 255, 0.205);
-    
+    border-radius: 2px;
 }
 
 tr{
-    color:white;
+    color:rgba(255, 255, 255, 0.863);
 }
 
 .btnuser1{
-    color: white;
-    background-color: #00ff0062;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 255, 21, 0.568);
+    background-color: transparent;
     border: none;
     width: 55px;
+    height: 25px;
+    border-radius: 2px;
+    cursor: pointer;
 }
 
 .btnuser2{
-    color: white;
-    background-color: #ff080056;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 0, 0, 0.637);
+    background-color: transparent;
     border: none;
     width: 55px;
+    height: 25px;
+    border-radius: 2px;
+    cursor: pointer;
 }

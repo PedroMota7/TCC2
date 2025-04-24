@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <title>Editar Usuário</title>
+    <title>Usuário</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../style/geral.css">
     <link rel="stylesheet" href="../style/user.css">
@@ -11,17 +11,18 @@
 
 <body>
     <header>
-    <nav>
-            <a href= "../pages/inicio.html">Início</a>
-            <a href="../pages/suporte.html">Suporte</a>  
+        <nav>
+            <a href="../pages/inicio.html">Início</a>
+            <a href="../pages/cadastro_user.html">Cadastrar</a>
+            <a href="../pages/suporte.html">Suporte</a>
             <a href="../php/valida_login_adm.php?bt=sair"><button type="submit" class="btn">Sair</button></a>
         </nav>
     </header>
-    <table>  
+    <table>
 
         <?php
         $abc = mysqli_connect('localhost', 'root', NULL, 'tcc')
-        or die('Erro ao se conectar ao banco de dados');
+            or die('Erro ao se conectar ao banco de dados');
 
         $consulta = "SELECT * FROM db_use";
         $result = mysqli_query($abc, $consulta);
@@ -32,17 +33,17 @@
 
         while ($tbl = mysqli_fetch_array($result)) {
             $nome = $tbl['NOME'];
-            $id =$tbl['ID'];
+            $id = $tbl['ID'];
         ?>
 
             <tr>
                 <td><?php echo $id; ?></td>
                 <td><?php echo $nome; ?></td>
 
-               <td><a href="editar_usuario.php?id=<?php echo $id; ?>"><button type="submit" class="btnuser1">Editar</button></a></td>
-               <td><a href="excluir_usuario.php?id=<?php echo $id; ?>"><button class="btnuser2" onclick="if(confirm('Tem certeza que deseja excluir este usuário?'))
+                <td><a href="editar_usuario.php?id=<?php echo $id; ?>"><button type="submit" class="btnuser1">Editar</button></a></td>
+                <td><a href="excluir_usuario.php?id=<?php echo $id; ?>"><button class="btnuser2" onclick="if(confirm('Tem certeza que deseja excluir este usuário?'))
                 { window.location.href='excluir_usuario.php?id=<?php echo $id; ?>'; }"> Excluir </button></a></td>
-            </tr>            
+            </tr>
 
         <?php
         }
@@ -53,4 +54,3 @@
 </body>
 
 </html>
-

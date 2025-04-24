@@ -65,5 +65,9 @@ form{
     gap: 7px;
 }
 
+.btn{
+    cursor: pointer;
+}
+
 
 

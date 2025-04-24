@@ -18,7 +18,7 @@ $sql = "UPDATE db_use SET
 
 if (mysqli_query($abc, $sql)) {
     sleep(1);
-	header('location:usuarios.php');
+    header('location:usuarios.php');
 } else {
     echo "Erro ao atualizar: " . mysqli_error($anc);
 }

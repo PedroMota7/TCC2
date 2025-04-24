@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="../style/geral.css">
     <link rel="stylesheet" href="../style/user.css">
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <script>
+    function confirmaracao(id) {
+      const confirmar = confirm("Tem certeza que deseja excluir esse usuario?");
+      if (confirmar) {
+       
+        window.location.href = "excluir_usuario.php?id=" + id;
+      } else {
+        
+        window.location.href = "usuarios.php"; 
+       
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -41,8 +54,7 @@
                 <td><?php echo $nome; ?></td>
 
                 <td><a href="editar_usuario.php?id=<?php echo $id; ?>"><button type="submit" class="btnuser1">Editar</button></a></td>
-                <td><a href="excluir_usuario.php?id=<?php echo $id; ?>"><button class="btnuser2" onclick="if(confirm('Tem certeza que deseja excluir este usuário?'))
-                { window.location.href='excluir_usuario.php?id=<?php echo $id; ?>'; }"> Excluir </button></a></td>
+                <td> <button class="btnuser2" onclick="confirmaracao(<?php echo $id; ?>)">Excluir</button></td>
             </tr>
 
         <?php

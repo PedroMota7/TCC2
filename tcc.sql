@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16/04/2025 às 05:57
+-- Tempo de geração: 24/04/2025 às 07:22
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -41,7 +41,8 @@ CREATE TABLE `adm` (
 --
 
 INSERT INTO `adm` (`ID`, `NOME`, `email`, `CPF`, `cnpj`, `senha`) VALUES
-(54, 'José Alves ', 'jose@gmail.com', '470.731.150-41', '123', '123');
+(54, 'José Alves ', 'jose@gmail.com', '470.731.150-41', '39.987.241/0001-01', '123'),
+(55, 'Maria Gabriela Santos', 'gabi@gmail.com', '861.825.240-90', '39.987.241/0001-01', '123');
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,9 @@ CREATE TABLE `db_use` (
 --
 
 INSERT INTO `db_use` (`ID`, `NOME`, `CPF`, `EMAIL`, `DATA_NASC`, `TELEFONE`) VALUES
-(27, 'Alex Machado Souza ', '724.964.960-44', 'alex@gmail.com', '1994-03-19', '(82) 93528-9427');
+(29, 'Mateus Alves Machado', '223.922.820-21', 'mateus@gmail.com', '2002-06-12', '6140028922'),
+(30, 'João Marcos Ramos ', '506.886.820-57', 'joao@gmail.com', '2005-07-29', '6322982004'),
+(31, 'Natasha Nunes ', '306.577.810-61', 'nat@gmail.com', '1999-03-08', '61910841250');
 
 --
 -- Índices para tabelas despejadas
@@ -89,13 +92,13 @@ ALTER TABLE `db_use`
 -- AUTO_INCREMENT de tabela `adm`
 --
 ALTER TABLE `adm`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de tabela `db_use`
 --
 ALTER TABLE `db_use`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

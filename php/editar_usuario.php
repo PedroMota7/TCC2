@@ -19,15 +19,12 @@ $usuario = mysqli_fetch_assoc($res);
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <title>Editar Usuário</title>
-    <link rel="stylesheet" href="../style/geral.css">
-    <link rel="stylesheet" href="../style/edit_user.css">
-    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/geral.css">
 </head>
-
 <body>
     <header>
         <nav>
@@ -41,16 +38,20 @@ $usuario = mysqli_fetch_assoc($res);
             <form action="salvar_usuario.php" method="POST">
                 <h2>Editar Usuário</h2>
                 <input type="hidden" name="id" value="<?php echo $usuario['ID']; ?>">
-
-                Nome: <input type="text" name="nome" value="<?php echo $usuario['NOME']; ?>"><br><br>
-                CPF: <input type="text" name="cpf" value="<?php echo $usuario['CPF']; ?>"><br><br>
-                Email: <input type="email" name="email" value="<?php echo $usuario['EMAIL']; ?>"><br><br>
-                Data de Nascimento: <input type="date" name="data" value="<?php echo $usuario['DATA_NASC']; ?>"><br><br>
-                Telefone: <input type="text" name="telefone" value="<?php echo $usuario['TELEFONE']; ?>"><br><br>
+                
+                Nome:<input type="text" name="nome" value="<?php echo $usuario['NOME']; ?>">
+                
+                CPF:<input type="text" name="cpf" value="<?php echo $usuario['CPF']; ?>">
+    
+                Email: <input type="email" name="email" value="<?php echo $usuario['EMAIL']; ?>">
+               
+                Data de Nascimento: <input type="date" name="data" value="<?php echo $usuario['DATA_NASC']; ?>">
+                
+                Telefone: <input type="text" name="telefone" value="<?php echo $usuario['TELEFONE']; ?>">
+                <br>
                 <input type="submit" value="Salvar Alterações">
             </form>
         </div>
     </main>
 </body>
-
 </html>

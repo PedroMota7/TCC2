@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <title>Usuário</title>
     <meta charset="utf-8">
@@ -8,20 +7,19 @@
     <link rel="stylesheet" href="../style/user.css">
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <script>
-    function confirmaracao(id) {
-      const confirmar = confirm("Tem certeza que deseja excluir esse usuario?");
-      if (confirmar) {
-       
-        window.location.href = "excluir_usuario.php?id=" + id;
-      } else {
-        
-        window.location.href = "usuarios.php"; 
-       
-      }
-    }
-  </script>
-</head>
+        function confirmaracao(id) {
+            const confirmar = confirm("Tem certeza que deseja excluir esse usuario?");
+            if (confirmar) {
 
+                window.location.href = "excluir_usuario.php?id=" + id;
+            } else {
+
+                window.location.href = "usuarios.php";
+
+            }
+        }
+    </script>
+</head>
 <body>
     <header>
         <nav>
@@ -64,5 +62,4 @@
 
     </table>
 </body>
-
 </html>

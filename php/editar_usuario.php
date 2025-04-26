@@ -24,13 +24,14 @@ $usuario = mysqli_fetch_assoc($res);
     <meta charset="utf-8">
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../style/geral.css">
+    <link rel="stylesheet" href="../style/editaruser.css">
 </head>
 <body>
     <header>
         <nav>
             <a href="../pages/inicio.html">Início</a>
             <a href="../pages/suporte.html">Suporte</a>
-            <a href="../php/valida_login_adm.php?bt=sair"><button type="submit" class="btn">Sair</button></a>
+            <a href="../php/valida_login_adm.php?bt=sair"><button type="submit" class="btn"><img src="../img/logout.svg" alt=""></button></a>
         </nav>
     </header>
     <main>
@@ -39,17 +40,17 @@ $usuario = mysqli_fetch_assoc($res);
                 <h2>Editar Usuário</h2>
                 <input type="hidden" name="id" value="<?php echo $usuario['ID']; ?>">
                 
-                Nome:<input type="text" name="nome" value="<?php echo $usuario['NOME']; ?>">
+                Nome:<input class="conteudo" type="text" name="nome" value="<?php echo $usuario['NOME']; ?>">
                 
-                CPF:<input type="text" name="cpf" value="<?php echo $usuario['CPF']; ?>">
+                CPF:<input class="conteudo" type="text" name="cpf" value="<?php echo $usuario['CPF']; ?>">
     
-                Email: <input type="email" name="email" value="<?php echo $usuario['EMAIL']; ?>">
+                Email: <input class="conteudo" type="email" name="email" value="<?php echo $usuario['EMAIL']; ?>">
                
-                Data de Nascimento: <input type="date" name="data" value="<?php echo $usuario['DATA_NASC']; ?>">
+                Data de Nascimento: <input class="conteudo" type="date" name="data" value="<?php echo $usuario['DATA_NASC']; ?>">
                 
-                Telefone: <input type="text" name="telefone" value="<?php echo $usuario['TELEFONE']; ?>">
+                Telefone: <input class="conteudo" type="text" name="telefone" value="<?php echo $usuario['TELEFONE']; ?>">
                 <br>
-                <input type="submit" value="Salvar Alterações">
+                <input class="btn" type="submit" value="Salvar Alterações">
             </form>
         </div>
     </main>

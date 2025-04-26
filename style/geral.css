@@ -1,70 +1,92 @@
-*{
-    margin: 0%;
-    padding: 0%;
-}
-
-:root{
-    --corPrima: #b3b6b7 ;
-    --corSeg:#2a2828;
-    --corTer:#f2f3f4 ;
-    --preto:#000000;
-    --branco:#fff;
-    --teste:aqua;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-image: url(../img/fundo.png);
-}
-
-header{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --corPrima: #b3b6b7;
+    --corSeg: #2a2828;
+    --corTer: #f2f3f4;
+    --preto: #000000;
+    --branco: #ffffff;
+    --teste: aqua;
+  }
+  
+  body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: url("../img/fundo.png");
+  }
+  
+  header {
     background-color: var(--corPrima);
     width: 100%;
     height: 60px;
     display: flex;
-    justify-content:end;
+    justify-content: flex-end;
     align-items: center;
-}
-
-nav{
+  }
+  
+  nav {
     display: flex;
     gap: 30px;
     margin-right: 50px;
-}
-
-a{
+  }
+  
+  a {
     text-decoration: none;
     color: var(--preto);
-}
-
-.container{
-    background-color: var(--corTer);
+  }
+  
+  .container {
+    background-color: rgba(183, 184, 187, 0.57);
     padding: 20px;
     display: flex;
     justify-content: center;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(3, 3, 3, 0.082);
-    width: 350px;
+    width: 330px;
     height: 300px;
-    margin-top: 19%;   
+    margin-top: 19%;
     margin-right: 3%;
-}
- 
-main{
+  }
+  
+  main {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 70vh;
     margin-right: 250px;
-}
-
-form{
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 6px;
-}
-
-.btn{
+  }
+  
+  .btn {
+    background-color: transparent;
     cursor: pointer;
-}
-
-
-
+    border: none;
+  }
+  
+  input.conteudo {
+    background-color: transparent;
+    border: 1px solid var(--preto);
+    border-radius: 4px;
+    color: var(--branco);
+    padding: 8px;
+  }
+  
+  input.conteudo::placeholder {
+    color: var(--preto);
+  }
+  
+  input.conteudo:hover {
+    color: var(--branco);
+    border: 1px solid var(--branco);
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+  

@@ -12,7 +12,7 @@
         <nav>
             <a href="inicio.html">Início</a>
             <a href="suporte.html">Suporte</a>
-            <a href="Login.html"><button type="submit" class="btn">Login</button></a>
+            <a href="Login.html"><button type="submit">Login</button></a>
         </nav>
     </header>
     <main>
@@ -20,37 +20,38 @@
             <form id="cnpjForm" action="../php/Cadastro_adm.php" method="post"></form>
             <form id="cpfForm" action="../php/Cadastro_adm.php" method="post" onsubmit="return validarSenhas()">
                 <div class="box-cad">
-                    <h1>Cadastro de Administrador</h1>
+                    <h1>Cadastro de Adm</h1>
                     <br>
                     <label for="Nome" class="form-label"></label>
-                    <input type="text" placeholder="Insira seu nome" class="form-control" name="nome" id="Nome"
+                    <input class="conteudo" type="text" placeholder="Insira seu nome" class="form-control" name="nome" id="Nome"
                         aria-describedby="NomeAdm" required>
                 </div>
                 <div class="box-cad">
                     <label for="Cpf" class="form-label"></label>
-                    <input type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}\-\d{2}" maxlength="14"
+                    <input class="conteudo" type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}\-\d{2}" maxlength="14"
                         placeholder="Insira seu CPF" id="cpf" required>
                 </div>
                 <div class="box-cad">
                     <label for="Email" class="form-label"></label>
-                    <input type="email" placeholder="Insira seu Email" class="form-control" name="email" id="email"
+                    <input class="conteudo" type="email" placeholder="Insira seu Email" class="form-control" name="email" id="email"
                         required>
                 </div>
                 <div class="box-cad">
                     <label for="cnpj" class="form-label"></label>
-                    <input type="text" id="cnpj" name="cnpj" pattern="\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}" maxlength="18"
+                    <input class="conteudo" type="text" id="cnpj" name="cnpj" pattern="\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}" maxlength="18"
                         placeholder="Digite seu CNPJ" id="cnpj" required>
                 </div>
                 <div class="box-cad">
                     <label for="senha" class="form-label"></label>
-                    <input type="password" placeholder="Crie uma senha" class="form-control" name="senha" id="senha"
+                    <input class="conteudo" type="password" placeholder="Crie uma senha" class="form-control" name="senha" id="senha"
                         required>
                 </div>
                 <div class="box-cad">
                     <label for="Confsenha" class="form-label"></label>
-                    <input type="password" placeholder="Confirme a senha" class="form-control" id="confirmarSenha"
+                    <input class="conteudo" type="password" placeholder="Confirme a senha" class="form-control" id="confirmarSenha"
                         name="confirmarSenha" required>
                 </div>
+                <br>
                 <input class="btn" type="submit" value="Cadastrar" />
             </form>
         </div>
@@ -174,7 +175,9 @@
         });
     </script>
 
-    <footer></footer>
+    <footer>
+       
+    </footer>
 </body>
 
 </html>

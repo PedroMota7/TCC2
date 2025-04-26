@@ -11,8 +11,8 @@
     <header>
         <nav>
             <a href="inicio.html">Início</a>
-            <a href="suporte.html">Suporte</a>
             <a href="../php/usuarios.php">Usuarios</a>
+            <a href="suporte.html">Suporte</a>
             <a href="../php/valida_login_adm.php?bt=sair"><button type="submit" class="btn">Sair</button></a>
         </nav>
     </header>
@@ -23,29 +23,29 @@
                     <h1>Cadastro de Usuário</h1>
                     <br>
                     <label for="Nome" class="form-label"></label>
-                    <input type="text" placeholder="Insira o nome" class="form-control" name="nome" id="Nome"
+                    <input class="conteudo" type="text" placeholder="Insira o nome" class="form-control" name="nome" id="Nome"
                         aria-describedby="NomeAdm">
                 </div>
                 <div class="box-cad">
                     <label for="Cpf" class="form-label"></label>
-                    <input type="text" name="cpf" \ pattern="\d{3}\.\d{3}\.\d{3}\-\d{2}" \ placeholder="Digite seu CPF"
+                    <input class="conteudo" type="text" name="cpf" \ pattern="\d{3}\.\d{3}\.\d{3}\-\d{2}" \ placeholder="Digite seu CPF"
                         id="cpf">
                 </div>
                 <div class="box-cad">
                     <label for="Email" class="form-label"></label>
-                    <input type="email" placeholder="Insira o Email" class="form-control" name="email" id="email">
+                    <input class="conteudo" type="email" placeholder="Insira o Email" class="form-control" name="email" id="email">
                 </div>
                 <div class="box-cad">
                     <label for="date" class="form-label"></label>
-                    <input type="date" placeholder="Insira a Data de Nascimento" class="form-control" name="data"
+                    <input class="conteudo" type="date" placeholder="Insira a Data de Nascimento" class="form-control" name="data"
                         id="data">
                 </div>
                 <div class="box-cad">
                     <label for="Confsenha" class="form-label"></label>
-                    <input type="number" placeholder="Insira o telefone" class="form-control" name="tel" id="tel">
+                    <input class="conteudo" type="number" placeholder="Insira o telefone" class="form-control" name="tel" id="tel">
                 </div>
                 <br>
-                <button class="bnt" type="submit">Cadastrar</button>
+                <button class="btn" type="submit">Cadastrar</button>
             </form>
         </div>
     </main>

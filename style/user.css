@@ -2,7 +2,7 @@ body {
     background-image: url(../img/fundo_semlogo.png);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    
   }
   
   table {
@@ -18,7 +18,7 @@ body {
     padding: 0.5em 1em;
     height: 25px;
     background-color: #fefeff34;
-    border-radius: 2px;
+    
   }
   
   .btnuser1, .btnuser2 {

@@ -18,38 +18,108 @@
     </header>
     <main>
         <div class="container">
+            <form id="cpfForm" action="../php/usuarios.php" method="post"></form>
+            <form id="tel" action="../php/usuarios.php" method="post"></form>
             <form action="../php/valida_usuario.php" method="post">
                 <div class="box-cad">
                     <h1>Cadastro de Usuário</h1>
                     <br>
                     <label for="Nome" class="form-label"></label>
                     <input class="conteudo" type="text" placeholder="Insira o nome" class="form-control" name="nome" id="Nome"
-                        aria-describedby="NomeAdm">
+                        aria-describedby="NomeAdm" required/>
                 </div>
                 <div class="box-cad">
                     <label for="Cpf" class="form-label"></label>
-                    <input class="conteudo" type="text" name="cpf" \ pattern="\d{3}\.\d{3}\.\d{3}\-\d{2}" \ placeholder="Digite seu CPF"
-                        id="cpf">
+                    <input class="conteudo" type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Digite seu CPF" id="cpf" required/>
+
                 </div>
                 <div class="box-cad">
                     <label for="Email" class="form-label"></label>
-                    <input class="conteudo" type="email" placeholder="Insira o Email" class="form-control" name="email" id="email">
+                    <input class="conteudo" type="email" placeholder="Insira o Email" class="form-control" name="email" id="email" required/>
                 </div>
                 <div class="box-cad">
                     <label for="date" class="form-label"></label>
                     <input class="conteudo" type="date" placeholder="Insira a Data de Nascimento" class="form-control" name="data"
-                        id="data">
+                    id="data" required/>
                 </div>
                 <div class="box-cad">
-                    <label for="Confsenha" class="form-label"></label>
-                    <input class="conteudo" type="number" placeholder="Insira o telefone" class="form-control" name="tel" id="tel">
+                    <label for="tel" class="form-label"></label>
+                    <input class="conteudo" type="tel" name="telefone" 
+                           pattern="\(\d{2}\)\s\d{4,5}-\d{4}" 
+                           placeholder="Insira o telefone" 
+                           class="form-control" id="telefone" 
+                           maxlength="15" required/>
                 </div>
                 <br>
                 <button class="btn" type="submit">Cadastrar</button>
             </form>
         </div>
     </main>
+    <script>
+        function validaCPF(cpf) {
+            cpf = cpf.replace(/\D+/g, '');
+            if (cpf.length !== 11) return false;
 
+            let soma = 0;
+            let resto;
+            if (/^(\d)\1{10}$/.test(cpf)) return false;
+
+            for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+            resto = (soma * 10) % 11;
+            if ((resto === 10) || (resto === 11)) resto = 0;
+            if (resto !== parseInt(cpf.substring(9, 10))) return false;
+
+            soma = 0;
+            for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+            resto = (soma * 10) % 11;
+            if ((resto === 10) || (resto === 11)) resto = 0;
+            if (resto !== parseInt(cpf.substring(10, 11))) return false;
+
+            return true;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('cpfForm').addEventListener('submit', function (e) {
+                var cpf = document.getElementById('cpf').value;
+                if (!validaCPF(cpf)) {
+                    e.preventDefault();
+                    alert('CPF inválido. Verifique o número digitado.');
+                    document.getElementById('cpf').focus();
+                }
+            });
+
+            document.getElementById('cpf').addEventListener('input', function (e) {
+                var value = e.target.value;
+                var cpfPattern = value.replace(/\D/g, '')
+                    .replace(/(\d{3})(\d)/, '$1.$2')
+                    .replace(/(\d{3})(\d)/, '$1.$2')
+                    .replace(/(\d{3})(\d)/, '$1-$2')
+                    .replace(/(-\d{2})\d+?$/, '$1');
+                e.target.value = cpfPattern;
+            });
+        });
+    </script>
+    <script>
+        const telefoneInput = document.getElementById("telefone");
+      
+        telefoneInput.addEventListener("input", function(event) {
+          let value = event.target.value.replace(/\D/g, ""); // remove não números
+      
+          if (value.length > 11) {
+            value = value.slice(0, 11); // máximo 11 dígitos (2 DDD + 9 número)
+          }
+      
+          if (value.length > 6) {
+            value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, "($1) $2-$3");
+          } else if (value.length > 2) {
+            value = value.replace(/^(\d{2})(\d{0,5})/, "($1) $2");
+          } else {
+            value = value.replace(/^(\d{0,2})/, "($1");
+          }
+      
+          event.target.value = value;
+        });
+      </script>
     <footer></footer>
 
 </body>

@@ -4,24 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Início</title>
-    <link rel="stylesheet" href="../style/geral.css">
+    <link rel="stylesheet" href="style/geral.css">
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
 </head>
 <body>
     <header>
         <nav>
-            <div id="esquerda">
-                <img src="../img/Design sem nome (1).svg" alt="logo" >
-            </div>
             <a href="inicio.html">Início</a>
-            <a href="suporte.html">Suporte</a>
-            <a href="Login.html"><button type="submit">Login</button></a>
+            <a href="pages/suporte.html">Suporte</a>
+            <a href="/pages/Login.html"><button type="submit">Login</button></a>
         </nav>
     </header>
     <main>
         <div class="container">
-            <form id="cnpjForm" action="../php/Cadastro_adm.php" method="post"></form>
-            <form id="cpfForm" action="../php/Cadastro_adm.php" method="post" onsubmit="return validarSenhas()">
+            <form id="cnpjForm" action="/php/Cadastro_adm.php" method="post"></form>
+            <form id="cpfForm" action="/php/Cadastro_adm.php" method="post" onsubmit="return validarSenhas()">
                 <div class="box-cad">
                     <h1>Cadastro de Adm</h1>
                     <br>

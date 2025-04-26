@@ -13,7 +13,7 @@
 <body>
     <header>
         <nav>
-            <a href="../pages/inicio.html">Início</a>
+            <a href="../inicio.html">Início</a>
             <a href="../pages/cadastro_user.html">Cadastrar</a>
             <a href="../pages/suporte.html">Suporte</a>
             <a href="../php/valida_login_adm.php?bt=sair"><button type="submit" class="btn">Sair</button></a>

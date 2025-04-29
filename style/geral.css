@@ -5,11 +5,11 @@
 }
 
 :root {
+  --preto: #000000;
+  --branco: #ffffff;
   --corPrima: #DFDFDF ;
   --corSeg: #2a2828;
   --corTer: #f2f3f4;
-  --preto: #000000;
-  --branco: #ffffff;
   --teste: aqua;
 }
 

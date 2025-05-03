@@ -16,12 +16,13 @@ main {
   
 article {
     flex: 2;
-    margin-right: 20px;
+    margin-right: 2px;
 }
   
 article img {
-    width: 70%;
-    height: 600px;
+    width: 60%;
+    height: 500px;
+    border-radius: 3px;
 }
   
 aside {

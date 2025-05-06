@@ -14,7 +14,7 @@
     <header>
         <nav>
             <a href="#"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
-            <a href="../index.html">Início</a>
+            <a href="../pages/inicio.html">Início</a>
             <a href="../pages/cadastro_user.html">Cadastrar</a>
             <a href="../pages/suporte.html">Suporte</a>
             <a href="../php/valida_login_adm.php?bt=sair"><button type="submit" class="btn">Sair</button></a>

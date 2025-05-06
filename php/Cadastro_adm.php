@@ -7,8 +7,8 @@ $cpf_adm = $_POST['cpf'];
 $cnpj_emp = $_POST['cnpj'];
 $senha_adm = $_POST['senha'];
 
-// $senha = $_POST['senha'];
-// $hash = password_hash($senha_adm, PASSWORD_DEFAULT);
+$senha = $_POST['senha'];
+$hash = password_hash($senha_adm, PASSWORD_DEFAULT);
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

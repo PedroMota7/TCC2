@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,11 +13,25 @@
 <body>
     <header>
         <nav>
+        
             <a href="#"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
             <a href="../pages/inicio.html">Início</a>
             <a href="../php/usuarios.php">Usuarios</a>
             <a href="../pages/suporte.html" class="suporte">Suporte</a>
-            <a href="../php/valida_login_adm.php?bt=sair"><button type="submit" class="btn">Sair</button></a>
+            <?php
+session_start();  // Inicia a sessão
+
+// Verifica se o usuário está autenticado
+if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
+    echo "<p>Logado {$_SESSION['email']}!</p>";  // Exibe o e-mail do usuário
+} else {
+    echo "<p>Você não está logado.</p>";  // Caso o usuário não esteja logado
+}
+?>
+            
+            <a href="../php/encerrar.php?bt=sair"><button type="submit" class="btn">Sair</button></a>
+
+            
         </nav>
     </header>
     <main>
@@ -119,11 +136,13 @@
           }
       
           event.target.value = value;
-        });
+        });
       </script>
       
     <footer>
-        <p> # Entre em contato. <br> Telefone: (61) 93333-2254 <br> Endereço Quadra 123A Rua Inês - Vale do Paraíso, DF CEP 76923-000 <br> # Copyright @2024 FluxoTech. All rights reserved. </p>
+        <p> # Entre em contato. <br> Telefone: (61) 93333-2254 <br> E-mail: fluxotechsystems@gmail.com <br> Endereço
+            Quadra 123A Rua Inês - Vale do Paraíso, DF CEP 76923-000 <br> # Copyright @2024 FluxoTech. All rights
+            reserved. </p>
         <img class="pe" src="../img/logocentropreta.png" alt="logocentropreta" height="150px">
     </footer>
 

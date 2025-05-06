@@ -1,54 +1,42 @@
-
 <?php
-
 session_start();
+
+if (!isset($_POST['email']) || !isset($_POST['senha'])) {
+    header('Location:../pages/Login.php');
+    exit();
+}
 
 $_SESSION['autenticado'] = 'NAO';
 
-if(!isset($_POST['name']) && $_POST['senha'])
-{
-HEADER('Location:../pages/Login.html');
-}
-
-
 $email_adm = $_POST['email'];
-
 $senha_adm = $_POST['senha'];
- 
-$abc = mysqli_connect('localhost', 'root', NULL, 'tcc')
-or die ('Erro ao se conectar ao banco de dados');
 
-    
-$consulta = "SELECT * FROM adm 
-WHERE email = '$email_adm' AND senha = '$senha_adm'";
-	
+$abc = mysqli_connect('localhost', 'root', NULL, 'tcc') or die('Erro ao se conectar ao banco de dados');
 
-
+$consulta = "SELECT * FROM adm WHERE email = '$email_adm'";
 $result = mysqli_query($abc, $consulta);
 
-if(!$result)
-{
-  HEADER('Location:../pages/Login.html?log=erro');
+if (!$result) {
+    header('Location:../pages/Login.php?log=erro');
+    exit();
 }
 
-if(!mysqli_fetch_array($result))
-{
-	HEADER('Location:../pages/Login.html?log=erro2');
+$row = mysqli_fetch_array($result);
+if (!$row) {
+    header('Location:../pages/Login.php?log=erro2');
+    exit();
+} else {
+    $hashArmazenada = $row['senha'];
+    if (password_verify($senha_adm, $hashArmazenada)) {
+        $_SESSION['email'] = $email_adm;
+        $_SESSION['autenticado'] = 'SIM';
+        header('Location:../pages/cadastro_user.php');
+        exit();
+    } else {
+        header('Location:../pages/Login.php?log=erro2');
+        exit();
+    }
 }
-else
-{
-	 HEADER('Location:../pages/cadastro_user.html'); 
-}
-
-// if(isset get['bt'])
-// {
-// $_SESSION['autenticado'] = 'NAO';
-// 	session_destroy();
-// 	sleep(2);
-// 	header("Location:TCC2\pages\cadastro_user.html");
-// }
-
 
 mysqli_close($abc);
-
 ?>

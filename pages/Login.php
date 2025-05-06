@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -37,7 +40,7 @@
                         name="senha" id="senha" required><br>
                     <br>
                     <center>
-                        <a href="cadastro_user.html"><button class="btn" type="submit">Entrar</button></a>
+                        <a href="cadastro_user.php"><button class="btn" type="submit">Entrar</button></a>
                         <br>
                         <a href="#" class="esqueci">Esqueci a senha</a>
                     </center>
@@ -48,8 +51,9 @@
     </main>
 
     <footer>
-        <p> # Entre em contato. <br> Telefone: (61) 93333-2254 <br> Endereço Quadra 123A Rua Inês - Vale do Paraíso, DF
-            CEP 76923-000 <br> # Copyright @2024 FluxoTech. All rights reserved. </p>
+        <p> # Entre em contato. <br> Telefone: (61) 93333-2254 <br> E-mail: fluxotechsystems@gmail.com <br> Endereço
+            Quadra 123A Rua Inês - Vale do Paraíso, DF CEP 76923-000 <br> # Copyright @2024 FluxoTech. All rights
+            reserved. </p>
         <img class="pe" src="../img/logocentropreta.png" alt="logocentropreta" height="150px">
     </footer>
 

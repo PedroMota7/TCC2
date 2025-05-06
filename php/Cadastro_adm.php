@@ -31,7 +31,7 @@ $result2 = mysqli_query($abc, $sql);
 if ($result2) {
   
     sleep(2);
-	header('location:../pages/Login.html');
+	header('location:../pages/Login.php');
 }
     
  else {

@@ -33,7 +33,7 @@ CREATE TABLE `adm` (
   `email` varchar(100) DEFAULT NULL,
   `CPF` varchar(14) DEFAULT NULL,
   `cnpj` varchar(20) DEFAULT NULL,
-  `senha` varchar(15) DEFAULT NULL
+  `senha` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

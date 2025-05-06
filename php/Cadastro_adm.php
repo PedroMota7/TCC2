@@ -24,7 +24,7 @@ if (!$abc) {
 
 
 $sql = "INSERT INTO adm (ID, NOME, email, CPF, cnpj, senha)
-        VALUES (NULL, '$nome_adm', '$email_adm', '$cpf_adm', '$cnpj_emp', '$senha_adm')";
+        VALUES (NULL, '$nome_adm', '$email_adm', '$cpf_adm', '$cnpj_emp', '$hash')";
 
 $result2 = mysqli_query($abc, $sql);
 

@@ -14,7 +14,7 @@
     <header>
         <nav>
         
-            <a href="#"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
+            <a href="inicio.html"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
             <a href="../pages/inicio.html">Início</a>
             <a href="../php/usuarios.php">Usuarios</a>
             <a href="../pages/suporte.html" class="suporte">Suporte</a>

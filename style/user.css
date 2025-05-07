@@ -1,14 +1,19 @@
 table {
   margin: 10% auto;
-  border-collapse: collapse;
-  border: 1px #000;
+  /* border-collapse: collapse; */
+  /* border: 4px #000; */
 }
 
 tr {
   color: rgba(0, 0, 0, 0.863);
+  
 }
 
 td {
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
   padding: 0.5em 1em;
   height: 25px;
   background-color: #fefeff34;
@@ -39,5 +44,5 @@ td {
 
 .btnuser1:hover, .btnuser2:hover {
   color: #000;
-  /* opacity: 1.0; */
+  opacity: 1.0;
 }

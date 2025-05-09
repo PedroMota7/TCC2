@@ -1,21 +1,3 @@
-<?php
-$abc = mysqli_connect('localhost', 'root', '', 'tcc')
-    or die('Erro na conexão');
-
-if (!isset($_GET['id'])) {
-    die('ID não encontrado.');
-}
-
-$id = $_GET['id'];
-$sql = "SELECT * FROM db_use WHERE ID = $id";
-$res = mysqli_query($abc, $sql);
-
-if (mysqli_num_rows($res) == 0) {
-    die('Usuário não encontrado.');
-}
-
-$usuario = mysqli_fetch_assoc($res);
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">

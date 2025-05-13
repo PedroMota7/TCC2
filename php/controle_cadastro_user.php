@@ -9,15 +9,15 @@
 <body>
 <?php
 if (!isset($_POST['email'])) {
-    header('Location:../pages/cadastro_adm.html');
+    header('Location:../pages/cadastro_user.html');
     exit;
 }
 
 $v0 = $_POST['nome'];
-$v1 = $_POST['email'];
-$v2 = $_POST['cpf'];
-$v3 = $_POST['cnpj'];
-$v4 = $_POST['senha'];
+$v1 = $_POST['cpf'];
+$v2 = $_POST['email'];
+$v3 = $_POST['data_nasc'];
+$v4 = $_POST['telefone'];
 
 if (!empty($v0) && !empty($v2) && !empty($v1) && !empty($v4)) {
     require '../classes/classes.php'; 
@@ -25,10 +25,10 @@ if (!empty($v0) && !empty($v2) && !empty($v1) && !empty($v4)) {
     $u = new Administrador("fluxo_tech", "localhost", "root", "");  
     
     
-    if (!$u->cadastrarAdministrador($v0, $v1, $v2, $v3, $v4)) {
-        header('Location:../pages/cadastro_adm.html?ja_cadastrado'); 
+    if (!$u->cadastrarUsuario($v0, $v1, $v2, $v3, $v4)) {
+        header('Location:../pages/cadastro_user.html?ja_cadastrado'); 
     } else {
-        header('Location:../pages/cadastro_user.php?sucesso'); 
+        header('Location:usuarios.php?sucesso'); 
     }
 }
 ?>

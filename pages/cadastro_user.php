@@ -57,7 +57,7 @@ if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
                 </div>
                 <div class="box-cad">
                     <label for="date" class="form-label"></label>
-                    <input class="conteudo" type="date" placeholder="Insira a Data de Nascimento" class="form-control" name="data"
+                    <input class="conteudo" type="date" placeholder="Insira a Data de Nascimento" class="form-control" name="data_nasc"
                     id="data" required/>
                 </div>
                 <div class="box-cad">

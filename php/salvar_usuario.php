@@ -1,5 +1,5 @@
 <?php
-$abc = mysqli_connect('localhost', 'root', '', 'tcc') or die('Erro na conexão');
+$abc = mysqli_connect('localhost', 'root', '', 'fluxo_tech') or die('Erro na conexão');
 
 $id      = $_POST['id'];
 $nome    = $_POST['nome'];

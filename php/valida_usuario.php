@@ -7,7 +7,7 @@ $data = $_POST['data'];
 $TEL = $_POST['tel'];
  
 
-$abc = mysqli_connect('localhost', 'root', '', 'tcc');
+$abc = mysqli_connect('localhost', 'root', '', 'fluxo_tech');
 
 if (!$abc) {
     die('Erro ao se conectar ao banco de dados: ' . mysqli_connect_error());

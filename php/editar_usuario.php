@@ -1,22 +1,3 @@
-<?php
-$abc = mysqli_connect('localhost', 'root', '', 'tcc')
-    or die('Erro na conexão');
-
-if (!isset($_GET['id'])) {
-    die('ID não encontrado.');
-}
-
-$id = $_GET['id'];
-$sql = "SELECT * FROM db_use WHERE ID = $id";
-$res = mysqli_query($abc, $sql);
-
-if (mysqli_num_rows($res) == 0) {
-    die('Usuário não encontrado.');
-}
-
-$usuario = mysqli_fetch_assoc($res);
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -27,6 +8,7 @@ $usuario = mysqli_fetch_assoc($res);
     <link rel="stylesheet" href="../style/editaruser.css">
 </head>
 <body>
+
     <header>
         <nav>
             <a href="../pages/inicio.html"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
@@ -34,22 +16,44 @@ $usuario = mysqli_fetch_assoc($res);
             <a href="../pages/suporte.html" class="suporte">Suporte</a>
             <a href="../php/valida_login_adm.php?bt=sair"><button type="submit" class="btn">Sair</button></a>
         </nav>
+        <?php
+
+        require '../classes/classes.php'; // para executar a classe
+        $u = new Usuario("fluxo_tech","localhost","root","");  // instanciando
+        if($dados = $u->pesquisar_Para_Alterar_Usuario($email))
+        {
+            //print_r($dados);
+            $id_usuario = $dados['ID'];
+            $nome = $dados['NOME'];
+            $cpf = $dados['CPF'];
+            $email = $dados['EMAIL'];
+            $data_nasc = $dados['DATA_NASC'];
+            $telefone = $dados['TELEFONE'];
+
+        }
+        else
+        {
+            header('location: usuarios.php');
+        }
+        
+        ?>
     </header>
+
     <main>
         <div class="container">
             <form action="salvar_usuario.php" method="POST">
                 <h2>Editar Usuário</h2>
-                <input type="hidden" name="id" value="<?php echo $usuario['ID']; ?>">
+                <input type="hidden" name="id" value="<?php echo $dados['ID']; ?>">
                 
-                Nome:<input class="conteudo" type="text" name="nome" value="<?php echo $usuario['NOME']; ?>">
+                Nome:<input class="conteudo" type="text" name="nome" value="<?php echo $dados['NOME']; ?>">
                 
-                CPF:<input class="conteudo" type="text" name="cpf" value="<?php echo $usuario['CPF']; ?>">
+                CPF:<input class="conteudo" type="text" name="cpf" value="<?php echo $dados['CPF']; ?>">
     
-                Email: <input class="conteudo" type="email" name="email" value="<?php echo $usuario['EMAIL']; ?>">
+                Email: <input class="conteudo" type="email" name="email" value="<?php echo $dados['EMAIL']; ?>">
                
-                Data de Nascimento: <input class="conteudo" type="date" name="data" value="<?php echo $usuario['DATA_NASC']; ?>">
+                Data de Nascimento: <input class="conteudo" type="date" name="data" value="<?php echo $dados['DATA_NASC']; ?>">
                 
-                Telefone: <input class="conteudo" type="text" name="telefone" value="<?php echo $usuario['TELEFONE']; ?>">
+                Telefone: <input class="conteudo" type="text" name="telefone" value="<?php echo $dados['TELEFONE']; ?>">
                 <br>
                 <input class="btn" type="submit" value="Salvar Alterações">
             </form>

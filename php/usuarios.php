@@ -25,7 +25,7 @@
         <td>NOMES</td> 
         
         <?php
-        $abc = mysqli_connect('localhost', 'root', NULL, 'tcc')
+        $abc = mysqli_connect('localhost', 'root', NULL, 'fluxo_tech')
             or die('Erro ao se conectar ao banco de dados');
 
         $consulta = "SELECT * FROM db_use";
@@ -37,13 +37,13 @@
 
         while ($tbl = mysqli_fetch_array($result)) {
             $nome = $tbl['NOME'];
-            $id = $tbl['ID'];
+            $id_usuario = $tbl['ID'];
         ?>
             <tr>
-                <td><?php echo $id; ?></td>
+                <td><?php echo $id_usuario; ?></td>
                 <td><?php echo $nome; ?></td>
 
-                <td><a href="editar_usuario.php?id=<?php echo $id; ?>"><button type="submit" class="btnuser1">Editar</button></a></td>
+                <td><a href="editar_usuario.php?id=<?php echo $id_usuario; ?>"><button type="submit" class="btnuser1">Editar</button></a></td>
                 <td> <button class="btnuser2" onclick="confirmaracao(<?php echo $id; ?>)">Excluir</button></td>
             </tr>
         <?php

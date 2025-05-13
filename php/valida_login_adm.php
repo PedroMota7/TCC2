@@ -11,7 +11,7 @@ $_SESSION['autenticado'] = 'NAO';
 $email_adm = $_POST['email'];
 $senha_adm = $_POST['senha'];
 
-$abc = mysqli_connect('localhost', 'root', NULL, 'tcc') or die('Erro ao se conectar ao banco de dados');
+$abc = mysqli_connect('localhost', 'root', NULL, 'fluxo_tech') or die('Erro ao se conectar ao banco de dados');
 
 $consulta = "SELECT * FROM adm WHERE email = '$email_adm'";
 $result = mysqli_query($abc, $consulta);

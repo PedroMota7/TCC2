@@ -1,6 +1,6 @@
 <?php
 // Conexão com o banco
-$abc = mysqli_connect('localhost', 'root', NULL, 'tcc')
+$abc = mysqli_connect('localhost', 'root', NULL, 'fluxo_tech')
     or die('Erro ao conectar ao banco');
 
 // Verifica se o ID foi passado

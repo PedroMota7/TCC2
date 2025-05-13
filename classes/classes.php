@@ -37,6 +37,29 @@ class usuario
             return true;
         }
     }
+
+    public function alterarUsuario($id_usu, $nome, $cpf, $email, $data_nasc,  $telefone)
+{
+	// colocamos acima o $id também, não para alterá-lo, mas para usá-lo no filtro.
+	$cmd = $this->pdo->prepare("UPDATE db_user SET nome = :n, cpf = :c, email = :e, data_nasc = :d, telefone = :t WHERE id = :i");
+	$cmd->bindValue(":n", $nome);
+	$cmd->bindValue(":c", $cpf);
+	$cmd->bindValue(":e", $email);
+	$cmd->bindValue(":d", $data_nasc);
+	$cmd->bindValue(":t", $telefone);
+	$cmd->bindValue(":i", $id_usu);
+	$cmd->execute();
+	return;
+}
+public function pesquisar_Para_Alterar_Usuario($email) // para uso do login
+{
+	$cmd = $this->pdo->prepare("SELECT * FROM db_user WHERE nome = :e");
+	$cmd->bindValue(":e",$email);
+	$cmd->execute();
+	$res = $cmd->fetch(PDO::FETCH_ASSOC);
+	return $res;
+}
+
 }
 
 class Administrador

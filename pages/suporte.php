@@ -12,7 +12,6 @@
     <header>
         <nav> 
             <a href="inicio.html"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
-            <a href="inicio.html">Início</a>
             <?php
             
 session_start();  // Inicia a sessão

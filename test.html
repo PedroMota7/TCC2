@@ -2,46 +2,55 @@
 
 <html lang="pt-br">
 
-    <head>
+<head>
 
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="style/user.css">
-        <link rel="stylesheet" href="style/inicio.css">
-        <link rel="stylesheet" href="/style/geral.css">
+    <link rel="stylesheet" href="style/user.css">
+    <link rel="stylesheet" href="style/inicio.css">
+    <link rel="stylesheet" href="/style/geral.css">
 
-        <title>Login</title>
+    <title>TEST</title>
 
-    </head>
+</head>
 
-    <body>
-         <header>
-        <nav>
-            <a href="#"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
-            <a href="usuarios.php">Usuarios</a>
-            <a href="../pages/suporte.php" class="suporte">Suporte</a>
-            <p>Logado, Fulano!</p>
-            <a href="../php/encerrar.php"><button type="submit" class="btn">Sair</button></a>
+<body>
+    <header class="headerInicio">
+        <nav class="navInicio">
+            <a href="#"><img src="../img/logoSite.png" alt="logo"></a>
+            <div class="menu-direita">
+                <div id="cima">
+                    <p>Logado, jose@gmail.com!</p>
+                </div>
+                <div id="baixo">
+                    <a href="usuarios.php">Usuarios</a>
+                    <a href="../pages/suporte.php" class="suporte">Suporte</a>
+                    <a href="../php/encerrar.php">
+                        <button type="submit" class="btn">Sair</button>
+                    </a>
+                </div>
+            </div>
         </nav>
     </header>
 
 
-        <table>
-            <th>id</th>
-            <th>Nome</th>
-            <tr>
-                <td>10</td>
-                <td>Pedro</td>
-                
-                <td><button type="submit" class="btnuser1">Editar</button></td>
-                <td><button class="btnuser2" onclick="confirmaracao">Excluir</button></td>
-            </tr>
-            </table>
 
+    <table>
+        <th>id</th>
+        <th>Nome</th>
+        <tr>
+            <td>10</td>
+            <td>Pedro</td>
+
+            <td><button type="submit" class="btnuser1">Editar</button></td>
+            <td><button class="btnuser2" onclick="confirmaracao">Excluir</button></td>
+        </tr>
+    </table>
+    <!-- 
         <div id="login">
 
             <form class="card">
@@ -82,8 +91,8 @@
 
             </form>
 
-        </div>
+        </div> -->
 
-    </body>
+</body>
 
 </html>

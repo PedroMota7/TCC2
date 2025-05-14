@@ -13,9 +13,18 @@
     <header>
         <nav>
             <a href="#"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
-            <a href="chave_acesso.html">Administrador</a>
+            <a href="usuarios.php">Usuarios</a>
             <a href="../pages/suporte.php" class="suporte">Suporte</a>
-            <a href="Login.php"><button class="btn" type="submit">Login</button></a>
+            <?php
+                session_start();
+
+                    if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
+                       echo "<p>Logado {$_SESSION['email']}!</p>";
+                    } else {
+                        echo "<p>Você não está logado.</p>";
+                }
+            ?>
+            <a href="../php/encerrar.php"><button type="submit" class="btn">Sair</button></a>
         </nav>
     </header>
     <main>

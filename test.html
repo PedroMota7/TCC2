@@ -11,23 +11,34 @@
         <meta name="viewport"content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="style/user.css">
+        <link rel="stylesheet" href="style/inicio.css">
+        <link rel="stylesheet" href="/style/geral.css">
 
         <title>Login</title>
 
     </head>
 
     <body>
+         <header>
+        <nav>
+            <a href="#"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
+            <a href="usuarios.php">Usuarios</a>
+            <a href="../pages/suporte.php" class="suporte">Suporte</a>
+            <p>Logado, Fulano!</p>
+            <a href="../php/encerrar.php"><button type="submit" class="btn">Sair</button></a>
+        </nav>
+    </header>
 
 
         <table>
             <th>id</th>
-            <th>nome</th>
+            <th>Nome</th>
             <tr>
                 <td>10</td>
-                <td>Pauli</td>
-
-                <td><a href="#"><button type="submit" class="btnuser1">Editar</button></a></td>
-                <td> <button class="btnuser2" onclick="confirmaracao">Excluir</button></td>
+                <td>Pedro</td>
+                
+                <td><button type="submit" class="btnuser1">Editar</button></td>
+                <td><button class="btnuser2" onclick="confirmaracao">Excluir</button></td>
             </tr>
             </table>
 

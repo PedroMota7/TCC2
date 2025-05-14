@@ -15,7 +15,7 @@
         <nav>
         
             <a href="inicio.html"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
-            <a href="../pages/inicio.html">Início</a>
+            <a href="inicioLOGADO.php">Início</a>
             <a href="usuarios.php">Usuarios</a>
             <a href="../pages/suporte.php" class="suporte">Suporte</a>
             <?php

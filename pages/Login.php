@@ -17,13 +17,13 @@
         <nav>
             <a href="inicio.html"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
             <a href="inicio.html">Início</a>
-            <a href="suporte.html" class="suporte">Suporte</a>
+  
 
         </nav>
     </header>
     <main>
         <div class="container">
-            <form action="../php/valida_login_adm.php" method="post">
+            <form action="../php/controle_login_adm.php" method="post">
                 <center>
                     <div class="card-header">
                         <h2>Login</h2>

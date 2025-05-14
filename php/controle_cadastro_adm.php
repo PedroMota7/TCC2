@@ -28,7 +28,7 @@ if (!empty($v0) && !empty($v2) && !empty($v1) && !empty($v4)) {
     if (!$u->cadastrarAdministrador($v0, $v1, $v2, $v3, $v4)) {
         header('Location:../pages/cadastro_adm.html?ja_cadastrado'); 
     } else {
-        header('Location:../pages/cadastro_user.php?sucesso'); 
+        header('Location:../pages/Login.php?sucesso'); 
     }
 }
 ?>

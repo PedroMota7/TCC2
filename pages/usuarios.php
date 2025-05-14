@@ -13,11 +13,21 @@
 <body>
     <header>
         <nav>
-            <a href="../pages/inicio.html"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
-            <a href="../pages/inicio.html">Início</a>
-            <a href="../pages/cadastro_user.html">Cadastrar</a>
-            <a href="../pages/suporte.html" class="suporte">Suporte</a>
-            <a href="../php/valida_login_adm.php?bt=sair"><button type="submit" class="btn">Sair</button></a>
+            <a href="inicio.html"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
+            <a href="inicio.html">Início</a>
+            <a href="cadastro_user.php">Cadastrar</a>
+            <a href="suporte.php" class="suporte">Suporte</a>
+            <?php
+session_start();  // Inicia a sessão
+
+// Verifica se o usuário está autenticado
+if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
+    echo "<p>Logado {$_SESSION['email']}!</p>";  // Exibe o e-mail do usuário
+} else {
+    echo "<p>Você não está logado.</p>";  // 
+}
+?>
+            <a href="encerrar.php"><button type="submit" class="btn">Sair</button></a>
         </nav>
     </header>
     <table>
@@ -25,6 +35,9 @@
         <td>NOMES</td> 
         
         <?php
+
+
+
         $abc = mysqli_connect('localhost', 'root', NULL, 'fluxo_tech')
             or die('Erro ao se conectar ao banco de dados');
 
@@ -43,8 +56,14 @@
                 <td><?php echo $id_usuario; ?></td>
                 <td><?php echo $nome; ?></td>
 
-                <td><a href="editar_usuario.php?id=<?php echo $id_usuario; ?>"><button type="submit" class="btnuser1">Editar</button></a></td>
-                <td> <button class="btnuser2" onclick="confirmaracao(<?php echo $id; ?>)">Excluir</button></td>
+                <td><form action="../php/editar_usuario.php" method="POST" style="display:inline;">
+    <input type="hidden" name="id" value="<?php echo $id_usuario; ?>">
+    <button type="submit" class="btnuser1">Editar</button>
+</form></td>
+                <td> <form action="../php/controle_excluir.php" method="POST" style="display:inline;">
+    <input type="hidden" name="id_ex" value="<?php echo $id_usuario; ?>">
+    <button type="submit" class="btnuser2">Excluir</button>
+</form></td>
             </tr>
         <?php
         }
@@ -57,7 +76,7 @@
             const confirmar = confirm("Tem certeza que deseja excluir esse usuario?");
             if (confirmar) {
 
-                window.location.href = "excluir_usuario.php?id=" + id;
+                window.location.href = "../php/excluir_usuario.php?id=" + id;
             } else {
 
                 window.location.href = "usuarios.php";

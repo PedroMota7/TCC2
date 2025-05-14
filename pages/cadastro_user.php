@@ -16,8 +16,8 @@
         
             <a href="inicio.html"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
             <a href="../pages/inicio.html">Início</a>
-            <a href="../php/usuarios.php">Usuarios</a>
-            <a href="../pages/suporte.html" class="suporte">Suporte</a>
+            <a href="usuarios.php">Usuarios</a>
+            <a href="../pages/suporte.php" class="suporte">Suporte</a>
             <?php
 session_start();  // Inicia a sessão
 
@@ -25,7 +25,7 @@ session_start();  // Inicia a sessão
 if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
     echo "<p>Logado {$_SESSION['email']}!</p>";  // Exibe o e-mail do usuário
 } else {
-    echo "<p>Você não está logado.</p>";  // Caso o usuário não esteja logado
+    echo "<p>Você não está logado.</p>";  // 
 }
 ?>
             
@@ -36,9 +36,9 @@ if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
     </header>
     <main>
         <div class="container">
-            <form id="cpfForm" action="../php/usuarios.php" method="post"></form>
-            <form id="tel" action="../php/usuarios.php" method="post"></form>
-            <form action="../php/valida_usuario.php" method="post">
+            <form id="cpfForm" action="../php/controle_cadastro_user.php" method="post"></form>
+            <form id="tel" action="../php/controle_cadastro_user.php.php" method="post"></form>
+            <form action="../php/controle_cadastro_user.php" method="post">
                 <div class="box-cad">
                     <h1>Cadastro de Usuário</h1>
                     <br>

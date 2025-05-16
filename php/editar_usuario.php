@@ -28,7 +28,7 @@ if (isset($_POST['id']) && !empty($_POST['id'])) {
 
 <header>
     <nav>
-        <a href="../pages/inicio.html"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
+        <a href="../pages/inicio.html"><img src="../img/logoSite.png" alt="logo"></a>
         <a href="../pages/inicio.html">Início</a>
         <a href="../pages/suporte.html" class="suporte">Suporte</a>
         <a href="encerrar.php"><button type="submit" class="btn">Sair</button></a>

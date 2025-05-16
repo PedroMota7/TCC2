@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav>
-            <a href="#"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
+            <a href="#"><img src="../img/LogoSite.png" alt="logo"></a>
             <a href="../pages/chave_acesso.html"><button>Voltar</button></a>
             <!-- <a href="cadastro_adm.html">Administrador</a>
             <a href="Login.php"><button class="btn" type="submit">voltar</button></a> -->

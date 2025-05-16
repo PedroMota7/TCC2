@@ -12,14 +12,14 @@
 <body>
     <header>
         <nav>
-            <a href="#"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
+            <a href="../pages/inicioLOGADO.php"><img src="../img/LogoSite.png" alt="logo"></a>
             <a href="usuarios.php">Usuarios</a>
             <a href="../pages/suporte.php" class="suporte">Suporte</a>
             <?php
                 session_start();
 
                     if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
-                       echo "<p>Logado {$_SESSION['email']}!</p>";
+                       echo "<p>Logado</p>";
                     } else {
                         echo "<p>Você não está logado.</p>";
                 }
@@ -30,7 +30,7 @@
     <main>
         <div id="bloco">
             <article>
-                <img src="" alt="catraca">
+                <img src="../img/catraca.jpeg" alt="catraca">
             </article>
             <aside>
                 <h1>FluxoTech?</h1>
@@ -44,12 +44,6 @@
             </aside>
         </div>
     </main>
-    <div class="cadastre">
-        <h2>Gerencie sua empresa aqui!</h2>
-        <p>Gostou da ideia? Comece já cadastrando seu administrador!</p>
-        <button class="cadbtn">Quero Cadastrar</button>
-    </div>
-
 
     <footer>
         <p> # Entre em contato. <br> Telefone: (61) 93333-2254 <br> E-mail: fluxotechsystems@gmail.com <br> Endereço

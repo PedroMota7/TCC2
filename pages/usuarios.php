@@ -13,15 +13,15 @@
 <body>
     <header>
         <nav>
-            <a href="inicio.html"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
-            <a href="inicio.html">Início</a>
+            <a href="../pages/inicioLOGADO.php"><img src="../img/logoSite.png" alt="logo"></a>
+            <a href="../pages/inicioLOGADO.php">Início</a>
             <a href="cadastro_user.php">Cadastrar</a>
             <a href="suporte.php" class="suporte">Suporte</a>
             <?php
                 session_start();  
 
                     if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
-                        echo "<p>Logado {$_SESSION['email']}!</p>"; 
+                        echo "<p>Logado</p>"; 
                     } else {
                         echo "<p>Você não está logado.</p>"; 
                     }

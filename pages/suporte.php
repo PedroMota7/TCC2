@@ -7,28 +7,24 @@
     <link rel="shortcut icon" href="../img/logocentro.png" type="image/x-icon">
 </head>
 <body>
-
-
     <header>
         <nav> 
-            <a href="inicio.html"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
+            <a href="../pages/inicioLOGADO.php"><img src="../img/LogoSite.png" alt="logo"></a>
             <?php
             
-session_start();  // Inicia a sessão
+                session_start(); 
+                    if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
+                        echo "<p>Logado</p>";
+                    } else {
+                        echo "<p>Você não está logado.</p>";
+                    }
+            ?>
 
-// Verifica se o usuário está autenticado
-if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
-    echo "<p>Logado {$_SESSION['email']}!</p>";  // Exibe o e-mail do usuário
-} else {
-    echo "<p>Você não está logado.</p>";  // 
-}
-?>
+            <button class="btn" onclick="voltar()">Voltar</button>
 
-    <button class="btn" onclick="voltar()">Voltar</button>
-
-    <script>
-    function voltar() { window.history.back(); }
-</script>
+            <script>
+                function voltar() { window.history.back(); }
+            </script>
         </nav>
     </header>
     <main>
@@ -54,3 +50,4 @@ if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
         <img class="pe" src="../img/logocentropreta.png" alt="logocentropreta" height="150px">
 </footer>
 </html>
+

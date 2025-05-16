@@ -14,24 +14,20 @@
     <header>
         <nav>
         
-            <a href="inicio.html"><img src="../img/logocentropreta.png" alt="logo" height="30%" width="28%"></a>
+            <a href="InicioLOGADO.php"><img src="../img/logoSite.png" alt="logo"></a>
             <a href="inicioLOGADO.php">Início</a>
             <a href="usuarios.php">Usuarios</a>
             <a href="../pages/suporte.php" class="suporte">Suporte</a>
             <?php
-session_start();  // Inicia a sessão
-
-// Verifica se o usuário está autenticado
-if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
-    echo "<p>Logado {$_SESSION['email']}!</p>";  // Exibe o e-mail do usuário
-} else {
-    echo "<p>Você não está logado.</p>";  // 
-}
-?>
+                session_start();
+                 if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
+                    echo "<p>Logado</p>";
+                } else {
+                    echo "<p>Você não está logado.</p>";
+                }
+            ?>
             
-            <a href="../php/encerrar.php?bt=sair"><button type="submit" class="btn">Sair</button></a>
-
-            
+            <a href="../php/encerrar.php?bt=sair"><button type="submit" class="btn">Sair</button></a>  
         </nav>
     </header>
     <main>

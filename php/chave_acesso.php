@@ -11,7 +11,7 @@
         echo
         "<script>
             alert('Chave incorreta, tente novamente!');
-            window.location.href = '../pages/chave_acesso.html';
+            window.location.href = '../pages/login.html';
         </script>";
         
     }

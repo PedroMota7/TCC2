@@ -32,8 +32,12 @@ if($u->pesquisarAdministradorLogin($email, $senha))
 }
 else
 {
-	header('location: ../pages/Login.php?invalido');
-	exit();
+	echo
+	"<script>
+            alert('Chave incorreta, tente novamente!');
+            window.location.href = '../pages/chave_acesso.html';
+        </script>";
+
 }
 
 

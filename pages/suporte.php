@@ -9,7 +9,7 @@
 <body>
     <header>
         <nav> 
-            <a href="../pages/inicioLOGADO.php"><img src="../img/LogoSite.png" alt="logo"></a>
+            <a href="#"><img src="../img/LogoSite.png" alt="logo"></a>
             <?php
             
                 session_start(); 

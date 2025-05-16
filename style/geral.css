@@ -16,6 +16,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: linear-gradient(45deg, #dfdfdf 0%, #a8a8a8 50%, #7a7a7a 100%);
+    background-attachment: fixed;
 
 }
 
@@ -67,7 +68,7 @@ a {
   background-color: rgba(255, 255, 255, 0.397);
   padding: 45px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(3, 3, 3, 0.082);
+  box-shadow: 0 2px 5px rgba(3, 3, 3, 0.082);
 }
 
 main {
@@ -75,6 +76,7 @@ main {
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 60px);
+  margin: auto;
 }
 
 form {
@@ -92,7 +94,8 @@ form {
   transition: all 0.4s ease;
   cursor: pointer;
   border: none;
-  width: auto;
+  font-size: 14px;
+  
 }
 
 input.conteudo {
@@ -110,7 +113,7 @@ input.btn{
   display: flex;
   justify-content: center;
   width: 50%;
-  margin-left: 50px;
+  margin-left: 55px;
 }
 
 /* 

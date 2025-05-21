@@ -26,7 +26,7 @@
                         echo "<p>Você não está logado.</p>"; 
                     }
             ?>
-            <a href="encerrar.php"><button type="submit" class="btn">Sair</button></a>
+            <a href="../php/encerrar.php"><button type="submit" class="btn">Sair</button></a>
         </nav>
     </header>
     <script>

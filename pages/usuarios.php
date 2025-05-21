@@ -31,16 +31,24 @@
     </header>
     <script>
         function confirmarAcao(id_ex) {
-            const confirmar = confirm("Tem certeza que deseja excluir esse usuario?");
-            if (confirmar) {
-
-                 window.location.href = "../php/controle_excluir.php?id=" + id_ex;
-            } else {
-
-                window.location.href = "usuarios.php";
-
-            }
-        }
+    const confirmar = confirm("Tem certeza que deseja excluir esse usuário?");
+    if (confirmar) {
+        fetch("../php/controle_excluir.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: "id_ex=" + id_ex
+        })
+        .then(response => {
+         
+            window.location.href = "../pages/usuarios.php";
+        })
+        ;
+    } else {
+        window.location.href = "usuarios.php";
+    }
+}
     </script>
     <table>
     <th>ID</th> 
@@ -72,9 +80,16 @@
                 <button type="submit" class="btnuser1">Editar</button>
             </form>
         </td>
-        <td>
-            <button onclick="confirmarAcao(<?php echo $id_usuario; ?>)">Excluir</button>
-        </td>
+       <td>
+        
+    <form action="../php/controle_excluir.php" method="POST" style="display:inline;">
+    <input type="hidden" name="id_ex" value="<?php echo $id_usuario; ?>"> 
+
+    <button type="button" class="btnuser2" onclick="confirmarAcao(<?php echo $id_usuario; ?>)">Excluir</button>
+</form>
+
+
+</td>
     </tr>
     <?php
     }

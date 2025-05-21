@@ -42,7 +42,7 @@ class usuario
         $cmd = $this->pdo->prepare("DELETE FROM db_use WHERE id = :id");
         $cmd->bindValue(":id",$id_ex);
         $cmd->execute();
-        return;
+        return true;
     }
     public function alterarUsuario($id_usuario, $nome, $cpf, $email, $data_nasc,  $telefone)
 {

@@ -17,9 +17,10 @@ th{
   border-right: 1px solid #000000;
   padding: 0.2em 0.01em;
   height: 25px;
-  background-color: #ffffff;
+  background-color: #ffffffc9;
   color: #000;
   border-radius: 2px;
+  
 }
 
 td {
@@ -48,12 +49,12 @@ td {
 }
 
 .btnuser1 {
-  color: rgba(0, 255, 21, 0.568);
+  color: rgb(1, 49, 5);
   margin-right: 10px;
 }
 
 .btnuser2 {
-  color: rgba(255, 0, 0, 0.637);
+  color: rgb(95, 1, 1);
 }
 
 .btnuser1:hover, .btnuser2:hover {

@@ -5,13 +5,17 @@
     <title>Suporte</title>
     <link rel="stylesheet" href="../style/geral.css">
     <link rel="shortcut icon" href="../img/logocentro.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/suporte.css">
 </head>
 <body>
     <header>
         <nav> 
-            <a href="#"><img src="../img/LogoSite.png" alt="logo"></a>
-            <?php
+            <div class="nesquerda">
+                <a href="#"><img src="../img/LogoSite.png" alt="logo"></a>
+            </div>
             
+                <div class="ndireita">
+                    <?php
                 session_start(); 
                     if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
                         echo "<p>Logado</p>";
@@ -19,8 +23,8 @@
                         echo "<p>Você não está logado.</p>";
                     }
             ?>
-
             <button class="btn" onclick="voltar()">Voltar</button>
+                </div>
 
             <script>
                 function voltar() { window.history.back(); }

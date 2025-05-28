@@ -22,7 +22,7 @@ if (isset($_POST['id']) && !empty($_POST['id'])) {
     <meta charset="utf-8">
     <link rel="shortcut icon" href="../img/logocentro.png" type="image/x-icon">
     <link rel="stylesheet" href="../style/geral.css">
-    <link rel="stylesheet" href="../style/editaruser.css">
+    
 </head>
 <body>
 

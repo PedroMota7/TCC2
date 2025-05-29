@@ -1,0 +1,21 @@
+body{
+margin: auto;
+}
+
+h2{
+    margin-bottom: 4px;
+}
+
+form{
+    gap: 3px;
+}
+
+input.btn{
+  width: 55%;
+  margin-right: 55px;
+}
+
+input.conteudo{
+    margin-top: 5px;
+    margin-bottom: 6px;
+}

@@ -51,7 +51,7 @@
     <p> # Entre em contato. <br> Telefone: (61) 93333-2254 <br> E-mail: fluxotechsystems@gmail.com <br> Endereço
         Quadra 123A Rua Inês - Vale do Paraíso, DF CEP 76923-000 <br> # Copyright @2024 FluxoTech. All rights
         reserved. </p>
-        <img class="pe" src="../img/logocentropreta.png" alt="logocentropreta" height="150px">
+        <img class="pe" src="../img/LogoSite.png" alt="LogoSite" height="34px">
 </footer>
 </html>
 

@@ -145,10 +145,10 @@ footer {
   background-color: #eceaea36;
   color: var(--preto);
   padding: 0px 20px;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 200px;
 }
 
 footer .pe {

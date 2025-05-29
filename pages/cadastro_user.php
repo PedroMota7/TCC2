@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -8,6 +5,7 @@
     <meta charset="UTF-8">
     <title> Cadastro Usuário</title>
     <link rel="stylesheet" href="../style/geral.css">
+    <link rel="stylesheet" href="../style/cad_user.css">
     <link rel="shortcut icon" href="../img/logocentro.png" type="image/x-icon">
 </head>
 <body>
@@ -52,8 +50,8 @@
                     <input class="conteudo" type="email" placeholder="Insira o Email" class="form-control" name="email" id="email" required/>
                 </div>
                 <div class="box-cad">
-                    <label for="date" class="form-label"></label>
-                    <input class="conteudo" type="date" placeholder="Insira a Data de Nascimento" class="form-control" name="data_nasc"
+                    <label for="date" class="form-label">Data de Nascimento</label>
+                    <input class="conteudo" type="date" placeholder="" class="form-control" name="data_nasc"
                     id="data" required/>
                 </div>
                 <div class="box-cad">
@@ -139,7 +137,7 @@
         <p> # Entre em contato. <br> Telefone: (61) 93333-2254 <br> E-mail: fluxotechsystems@gmail.com <br> Endereço
             Quadra 123A Rua Inês - Vale do Paraíso, DF CEP 76923-000 <br> # Copyright @2024 FluxoTech. All rights
             reserved. </p>
-        <img class="pe" src="../img/logocentropreta.png" alt="logocentropreta" height="150px">
+        <img class="pe" src="../img/LogoSite.png" alt="LogoSite" height="34px">
     </footer>
 
 </body>

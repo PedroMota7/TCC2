@@ -17,7 +17,7 @@ class usuario
         }
     }
 
-    public function cadastrarUsuario($nome, $cpf, $email, $data_nasc, $telefone)
+    public function cadastrarUsuario($nome, $cpf, $email, $data_nasc, $telefone, $qr_code)
     {
         // Vendo se já está cadastrado
         $cmd = $this->pdo->prepare("SELECT * FROM db_use WHERE email = :e");
@@ -27,12 +27,13 @@ class usuario
         if ($cmd->rowCount() > 0) {
             return false;
         } else {
-            $cmd = $this->pdo->prepare("INSERT INTO db_use(nome, cpf, email, data_nasc, telefone) VALUES (:n, :c, :e, :d, :t)");
+            $cmd = $this->pdo->prepare("INSERT INTO db_use(nome, cpf, email, data_nasc, telefone, qr_code) VALUES (:n, :c, :e, :d, :t, :q)");
             $cmd->bindValue(":n", $nome);
             $cmd->bindValue(":c", $cpf);
             $cmd->bindValue(":e", $email);
             $cmd->bindValue(":d", $data_nasc);
             $cmd->bindValue(":t", $telefone);
+            $cmd->bindValue(":q", $qr_code); // ← Aqui está corrigido
             $cmd->execute();
             return true;
         }

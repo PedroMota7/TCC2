@@ -1,40 +1,101 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>controle_cadastro</title>
-    <meta charset="utf-8">
-</head>
-
-<body>
 <?php
+require 'conexao.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
 
 session_start();
 
 if (!isset($_POST['email'])) {
-    header('Location:../pages/cadastro_user.html');
+    header('Location:../pages/cadastro_user.php');
     exit;
 }
 
-$v0 = $_POST['nome'];
-$v1 = $_POST['cpf'];
-$v2 = $_POST['email'];
-$v3 = $_POST['data_nasc'];
-$v4 = $_POST['telefone'];
+$nome = $_POST['nome'];
+$cpf = $_POST['cpf'];
+$email = $_POST['email'];
+$data_nasc = $_POST['data_nasc'];
+$telefone = $_POST['telefone'];
 
-if (!empty($v0) && !empty($v2) && !empty($v1) && !empty($v4)) {
-    require '../classes/classes.php'; 
-    
-    $u = new Usuario("fluxo_tech", "localhost", "root", "");  
-    
-    
-    if (!$u->cadastrarUsuario($v0, $v1, $v2, $v3, $v4)) {
-        header('Location:../pages/cadastro_user.html?ja_cadastrado'); 
-    } else {
-        header('Location:../pages/usuarios.php?sucesso'); 
+// Gera QR Code único
+$qr_code = md5($email . time());
+$url = $qr_code;
+
+ 
+$qr_code = md5($email . time());
+$url = $qr_code;
+
+// Gerar imagem do QR
+$qrImageUrl = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" . urlencode($url);
+$imagem = file_get_contents($qrImageUrl);
+
+// Diretório correto onde será salvo o QR Code
+$diretorioQr = __DIR__ . "/qrcodes";
+if (!is_dir($diretorioQr)) {
+    @mkdir($diretorioQr, 0777, true);
+}
+
+// Caminho completo do arquivo de imagem
+$caminhoImagem = $diretorioQr . "/qr_$qr_code.png";
+file_put_contents($caminhoImagem, $imagem);
+
+
+    // Enviar por e-mail
+    $mail = new PHPMailer(true);
+try {
+    $pdo = new PDO("mysql:host=localhost;dbname=fluxo_tech", "root", "");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Verifica se já existe
+    $verifica = $pdo->prepare("SELECT * FROM db_use WHERE email = :email");
+    $verifica->bindValue(":email", $email);
+    $verifica->execute();
+
+    if ($verifica->rowCount() > 0) {
+        header('Location:../pages/cadastro_user.php?ja_cadastrado');
+        exit;
     }
+
+    // Insere novo usuário
+    $stmt = $pdo->prepare("INSERT INTO db_use (nome, cpf, email, data_nasc, telefone, qr_code)
+                           VALUES (:n, :c, :e, :d, :t, :q)");
+    $stmt->bindValue(":n", $nome);
+    $stmt->bindValue(":c", $cpf);
+    $stmt->bindValue(":e", $email);
+    $stmt->bindValue(":d", $data_nasc);
+    $stmt->bindValue(":t", $telefone);
+    $stmt->bindValue(":q", $qr_code);
+    $stmt->execute();
+
+} catch (PDOException $e) {
+    exit("Erro no banco de dados: " . $e->getMessage());
+}
+
+// ENVIA O E-MAIL COM O QR CODE
+$mail = new PHPMailer(true);
+
+try {
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'taypanpalemira32@gmail.com'; // Substitua pelo seu
+    $mail->Password = 'nlpg tyun xssl mrpm';         // Substitua pela senha de app do Gmail
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    $mail->setFrom('taypanpalemira32@gmail.com', 'Controle de Acesso');
+    $mail->addAddress($email, $nome);
+
+    $mail->isHTML(true);
+    $mail->Subject = 'Seu QR Code de Acesso';
+    $mail->Body    = "Olá, <strong>$nome</strong>!<br>Seu QR Code está em anexo. Apresente-o na entrada.";
+    $mail->addAttachment($caminhoImagem);
+
+    $mail->send();
+    header('Location:../pages/usuarios.php?cadastrado_realizado');
+} catch (Exception $e) {
+    echo "Erro ao enviar e-mail: {$mail->ErrorInfo}";
 }
 ?>
-</body>
-
-</html>

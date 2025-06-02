@@ -16,6 +16,7 @@
             <a href="../pages/inicioLOGADO.php"><img src="../img/logoSite.png" alt="logo"></a>
             <a href="../pages/inicioLOGADO.php">Início</a>
             <a href="cadastro_user.php">Cadastrar</a>
+            <a href="../php/Acessos.php">Acessos</a>
             <a href="suporte.php" class="suporte">Suporte</a>
             <?php
             session_start();

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leitor de QR Code - Mobile Friendly</title>
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #333;
+    }
+
+    #reader {
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 1 / 1;
+      border: 2px solid #333;
+      border-radius: 8px;
+      background: #000;
+      margin-bottom: 1rem;
+    }
+
+    #mensagem {
+      font-size: 1.2rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 1rem;
+      min-height: 2rem;
+    }
+
+    @media (max-width: 400px) {
+      body {
+        padding: 0.5rem;
+      }
+      #reader {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Leitor de QR Code</h2>
+  <div id="reader"></div>
+  <div id="mensagem">Aguardando leitura...</div>
+
+  <script>
+    const html5QrCode = new Html5Qrcode("reader");
+
+    Html5Qrcode.getCameras().then(devices => {
+      if (devices && devices.length) {
+        const cameraId = devices[0].id;
+        html5QrCode.start(
+          { deviceId: { exact: cameraId } },
+          {
+            fps: 10,
+            qrbox: { width: 350, height: 350 },
+            videoConstraints: {
+              facingMode: "environment"
+            }
+          },
+          (decodedText, decodedResult) => {
+            document.getElementById("mensagem").innerText = "QR LIDO: " + decodedText;
+            html5QrCode.stop().then(() => {
+              window.location.href = "registrar_acessos.php?qr=" + encodeURIComponent(decodedText);
+            });
+          },
+          (errorMessage) => {
+            // Você pode colocar debug aqui se quiser
+          }
+        );
+      } else {
+        document.getElementById("mensagem").innerText = "Nenhuma câmera detectada.";
+      }
+    }).catch(err => {
+      document.getElementById("mensagem").innerText = "Erro: " + err;
+    });
+  </script>
+  <button><a href=""></a></button>
+</body>
+</html>

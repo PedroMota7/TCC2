@@ -18,7 +18,7 @@ try {
     exit('Erro na conexão com o banco: ' . $e->getMessage());
 }
 
-// CONSULTA: Nome + Último Acesso
+
 $sql = "
     SELECT p.nome, MAX(a.data_hora) AS ultimo_acesso
     FROM db_use p

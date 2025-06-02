@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="../img/" type="image/x-icon">
   <title>Leitor de QR Code</title>
   <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
   <style>
@@ -37,10 +36,29 @@
 
     #mensagem {
       font-size: 1.2rem;
-      color: #555;
+      color: #222;
       text-align: center;
       margin-bottom: 1rem;
       min-height: 2rem;
+    }
+
+    #dica {
+      font-size: 0.9rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #555;
     }
 
     @media (max-width: 400px) {
@@ -49,7 +67,6 @@
       }
       #reader {
         max-width: 100%;
-        height: auto;
       }
     }
   </style>
@@ -58,6 +75,8 @@
   <h2>Leitor de QR Code</h2>
   <div id="reader"></div>
   <div id="mensagem">Aguardando leitura...</div>
+  <div id="dica">Dica: mantenha o QR em boa iluminação e sem reflexo.</div>
+  <button onclick="window.location.reload()">Reiniciar Leitor</button>
 
   <script>
     const html5QrCode = new Html5Qrcode("reader");
@@ -68,10 +87,12 @@
         html5QrCode.start(
           { deviceId: { exact: cameraId } },
           {
-            fps: 10,
-            qrbox: { width: 350, height: 350 },
+            fps: 15,
+            qrbox: { width: 320, height: 320 },
+            aspectRatio: 1,
             videoConstraints: {
-              facingMode: "environment"
+              facingMode: "environment",
+              focusMode: "continuous", // para ajudar com foco automático
             }
           },
           (decodedText, decodedResult) => {
@@ -81,7 +102,7 @@
             });
           },
           (errorMessage) => {
-            // Você pode colocar debug aqui se quiser
+            // Evita mostrar erro toda hora, apenas se quiser debug
           }
         );
       } else {
@@ -91,6 +112,5 @@
       document.getElementById("mensagem").innerText = "Erro: " + err;
     });
   </script>
-  <button><a href=""></a></button>
 </body>
 </html>

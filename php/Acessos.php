@@ -35,17 +35,23 @@ $listaAcessos = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Últimos Acessos</title>
+    <link rel="stylesheet" href="../style/geral.css">
+    <link rel="stylesheet" href="../style/suporte.css">
+    <link rel="shortcut icon" href="../img/logocentro.png" type="image/x-icon">
     <style>
-        body {
+        /* body {
+            background: linear-gradient(45deg, #dfdfdf 0%, #a8a8a8 50%, #7a7a7a 100%);
+            background-attachment: fixed;
             font-family: Arial, sans-serif;
             padding: 20px;
             text-align: center;
-        }
+        } */
         table {
             margin: auto;
             border-collapse: collapse;
             width: 90%;
             max-width: 700px;
+            background-color: white;
         }
         th, td {
             border: 1px solid #999;
@@ -57,7 +63,31 @@ $listaAcessos = $stmt->fetchAll();
     </style>
 </head>
 <body>
-    <h2>Últimos Acessos</h2>
+    <header>
+        <nav>
+            <div class="nesquerda">
+                <a href="#"><img src="../img/LogoSite.png" alt="logo"></a>
+            </div>
+            
+                <div class="ndireita">
+                    <?php
+                session_start(); 
+                    if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
+                        echo "<p>Logado</p>";
+                    } else {
+                        echo "<p>Você não está logado.</p>";
+                    }
+            ?>
+            <button class="btn" onclick="voltar()">Voltar</button>
+                </div>
+
+            <script>
+                function voltar() { window.history.back(); }
+            </script>
+        </nav>
+    </header>
+    <main>
+        <h2>Últimos Acessos</h2>
     <table>
         <thead>
             <tr>
@@ -76,5 +106,6 @@ $listaAcessos = $stmt->fetchAll();
             <?php endforeach; ?>
         </tbody>
     </table>
+    </main>
 </body>
 </html>

@@ -80,12 +80,12 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'taypanpalemira32@gmail.com'; // Substitua pelo seu
-    $mail->Password = 'nlpg tyun xssl mrpm';         // Substitua pela senha de app do Gmail
+    $mail->Username = 'fluxotechsystems@gmail.com'; // Substitua pelo seu
+    $mail->Password = 'pizk wynj fntl bqjj';         // Substitua pela senha de app do Gmail
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->setFrom('taypanpalemira32@gmail.com', 'Controle de Acesso');
+    $mail->setFrom('fluxotechsystems@gmail.com', 'Controle de Acesso');
     $mail->addAddress($email, $nome);
 
     $mail->isHTML(true);

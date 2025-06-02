@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02/06/2025 às 22:01
+-- Tempo de geração: 02/06/2025 às 02:39
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,8 +41,7 @@ CREATE TABLE `acessos` (
 INSERT INTO `acessos` (`id`, `pessoa_id`, `nome`, `data_hora`) VALUES
 (1, NULL, NULL, '2025-06-01 21:21:50'),
 (5, 62, NULL, '2025-06-01 21:38:30'),
-(6, 61, NULL, '2025-06-01 21:38:55'),
-(0, 43, NULL, '2025-06-02 16:49:54');
+(6, 61, NULL, '2025-06-01 21:38:55');
 
 -- --------------------------------------------------------
 
@@ -64,9 +63,8 @@ CREATE TABLE `adm` (
 --
 
 INSERT INTO `adm` (`ID`, `NOME`, `email`, `CPF`, `cnpj`, `senha`) VALUES
-(60, 'Julia Maria Silva', 'julia@gmail.com', '210.263.950-97', '65.368.003/0001-28', '$2y$10$TJrfHwUP2hDAcjqRZOeY6emiLZo3oGgWVbmkJdWDVExtKqQXRFYaW'),
-(61, 'Adélia Dias Alves da Mota', 'diasalvesadelia@gmail.com', '839.866.696-04', '25.433.228/0001-21', '$2y$10$4kwKrRKiwbktd9v4EB08Tu1cVs/Gd9YSBxmCu7mjz9.qtsR73IC8a'),
-(62, 'MARIA EDUARDA DIAS MOTA', 'pedtropaulo@gmail.com', '077.969.841-03', '11.111.111/1111-11', '$2y$10$ov0YQiCsrmZQfJTx4r3djusp0QOGj6Y5fmnN8w1oMjc/aeTV9SZXS');
+(59, 'taypan', 'taypanpalemira32@gmail.com', '103.123.101-37', '11.111.111/1111-11', '$2y$10$dOH03I3nrOyc2vttPG898umSAisv8wGAyNO4XavlxeXIjovYBneEK'),
+(60, 'biatriz', 'bia@gmail.com', '629.571.450-14', '11.111.111/1111-11', '$2y$10$30iOJPxDT5n3HRJNLywGsOPbM3Pjr1MsIsyti/IvLHRd0RkzmI9Qi');
 
 -- --------------------------------------------------------
 
@@ -89,11 +87,19 @@ CREATE TABLE `db_use` (
 --
 
 INSERT INTO `db_use` (`ID`, `NOME`, `CPF`, `EMAIL`, `DATA_NASC`, `TELEFONE`, `qr_code`) VALUES
-(43, 'pedro', '103.123.101-37', 'pedtropaulo@gmail.com', '3333-02-23', '(61) 99999-9999', '09c189ba51ff182f4e18f0bb31e4c876');
+(61, 'taypan', '103.123.101-37', 'taypanpalmeira70@gmail.com', '0333-03-23', '(61) 99909-0943', 'eb188b3e03f4136b109e7bc7ac8fbb92'),
+(62, 'aobae', '675.152.270-36', 'taypanpalemira32@gmail.com', '0222-06-23', '(61) 99909-0943', '6c2d3034f70a327540bef2d2c6bee5dd');
 
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices de tabela `acessos`
+--
+ALTER TABLE `acessos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pessoa_id` (`pessoa_id`);
 
 --
 -- Índices de tabela `adm`
@@ -112,16 +118,32 @@ ALTER TABLE `db_use`
 --
 
 --
+-- AUTO_INCREMENT de tabela `acessos`
+--
+ALTER TABLE `acessos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT de tabela `adm`
 --
 ALTER TABLE `adm`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de tabela `db_use`
 --
 ALTER TABLE `db_use`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `acessos`
+--
+ALTER TABLE `acessos`
+  ADD CONSTRAINT `acessos_ibfk_1` FOREIGN KEY (`pessoa_id`) REFERENCES `db_use` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

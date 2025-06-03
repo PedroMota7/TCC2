@@ -51,6 +51,7 @@
                 }
             }
         </script>
+        <h2>Usuários</h2>
         <table>
             <th>ID</th>
             <th>Nomes</th>

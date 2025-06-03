@@ -47,7 +47,7 @@ td {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
+  background-color: #ffffffa1;
   border: none;
   width: 55px;
   height: 25px;
@@ -58,16 +58,18 @@ td {
 
 .btnuser1 {
   color: rgb(2, 90, 9);
+  margin-right: 2px;
   
 }
 
 .btnuser2 {
   color: rgb(95, 1, 1);
+  margin-left: 2px;
   
 }
 
 .btnuser1:hover, .btnuser2:hover {
-  color: #ffffff;
+  color: #0066ff;
   opacity: 1.0;
 }
 

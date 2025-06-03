@@ -1,0 +1,22 @@
+main{
+    display: flex;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 700px;
+    background-color: #ffffff77;
+    border: #000000;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 10px;
+}
+
+th {
+    background-color: #000000;
+    color: white;
+}

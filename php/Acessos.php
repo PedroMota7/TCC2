@@ -37,30 +37,8 @@ $listaAcessos = $stmt->fetchAll();
     <title>Últimos Acessos</title>
     <link rel="stylesheet" href="../style/geral.css">
     <link rel="stylesheet" href="../style/suporte.css">
+    <link rel="stylesheet" href="../style/acessos.css">
     <link rel="shortcut icon" href="../img/logocentro.png" type="image/x-icon">
-    <style>
-        /* body {
-            background: linear-gradient(45deg, #dfdfdf 0%, #a8a8a8 50%, #7a7a7a 100%);
-            background-attachment: fixed;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            text-align: center;
-        } */
-        table {
-            margin: auto;
-            border-collapse: collapse;
-            width: 90%;
-            max-width: 700px;
-            background-color: white;
-        }
-        th, td {
-            border: 1px solid #999;
-            padding: 10px;
-        }
-        th {
-            background-color: #eee;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -87,7 +65,7 @@ $listaAcessos = $stmt->fetchAll();
         </nav>
     </header>
     <main>
-        <h2>Últimos Acessos</h2>
+       <center> <h2>Últimos Acessos</h2></center>
     <table>
         <thead>
             <tr>
@@ -107,5 +85,12 @@ $listaAcessos = $stmt->fetchAll();
         </tbody>
     </table>
     </main>
+
+    <footer>
+        <p> # Entre em contato. <br> Telefone: (61) 93333-2254 <br> E-mail: fluxotechsystems@gmail.com <br> Endereço
+            Quadra 123A Rua Inês - Vale do Paraíso, DF CEP 76923-000 <br> # Copyright @2024 FluxoTech. All rights
+            reserved. </p>
+        <img class="pe" src="../img/LogoSite.png" alt="LogoSite" height="34px">
+    </footer>
 </body>
 </html>

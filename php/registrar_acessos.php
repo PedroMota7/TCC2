@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/logocentro.png" type="image/x-icon">
+
     <title>Registrar Acesso</title>
     <style>
     body {
@@ -79,7 +80,7 @@ if (!isset($_GET['qr'])) {
     exit('QR Code inválido!');
 }
 
-$dataQr = trim($_GET['qr']); // remove espaços, mas não altera maiúsculas
+$dataQr = trim($_GET['qr']);
 
 
 $stmt = $pdo->prepare("SELECT * FROM db_use WHERE qr_code = :data");
@@ -92,7 +93,7 @@ if (!$usuario) {
     
     exit;
 }
-// Aqui você coloca o código para verificar se já tem acesso hoje
+
 $stmt = $pdo->prepare("SELECT COUNT(*) FROM acessos WHERE pessoa_id = :pessoa_id AND DATE(data_hora) = CURDATE()");
 $stmt->execute(['pessoa_id' => $usuario['ID']]);
 $acessosHoje = $stmt->fetchColumn();
@@ -100,6 +101,7 @@ $acessosHoje = $stmt->fetchColumn();
 
 if ($acessosHoje > 0) {
     echo "Já foi registrado o acesso de hoje.";
+     echo '<button type="button" onclick="window.location.href=\'leitor.html\'">Voltar</button>';
     exit; // para o script aqui, sem inserir de novo
 } else {
     // Insere novo acesso
@@ -112,8 +114,12 @@ if ($acessosHoje > 0) {
 echo "<h2>Acesso registrado com sucesso!</h2>";
 echo "<p>Usuário: " . htmlspecialchars($usuario['NOME']) . "</p>";
 echo "<p>Horário: " . date('d/m/Y H:i:s') . "</p>";
-?>
 
+
+
+?>
+  <button class="btn" onclick="voltar()">Voltar</button>
+   <script> function voltar() { window.history.back(); } </script>
 
 </body>
 </html>

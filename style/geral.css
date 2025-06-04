@@ -11,12 +11,13 @@
   --corSeg: #2a2828;
   --corTer: #f2f3f4;
   --teste: aqua;
+  --fundo:linear-gradient(45deg, #dfdfdf 0%, #a8a8a8 50%, #7a7a7a 100%);
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(45deg, #dfdfdf 0%, #a8a8a8 50%, #7a7a7a 100%);
-    background-attachment: fixed;
+  background: var(--fundo);
+  background-attachment: fixed;
 
 }
 

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>controle_cadastro</title>
+    <title>Controle de Cadastro</title>
     <meta charset="utf-8">
 </head>
 

@@ -30,7 +30,7 @@
             <a href="../php/encerrar.php"><button type="submit" class="btn">Sair</button></a>
         </nav>
     </header>
-    <main>
+    <main class="main-user">
         <script>
             function confirmarAcao(id_ex) {
                 const confirmar = confirm("Tem certeza que deseja excluir esse usuário?");

@@ -23,7 +23,7 @@ $telefone = $_POST['telefone'];
 $qr_code = md5($email . time());
 $url = $qr_code;
 
- 
+
 $qr_code = md5($email . time());
 $url = $qr_code;
 
@@ -42,8 +42,8 @@ $caminhoImagem = $diretorioQr . "/qr_$qr_code.png";
 file_put_contents($caminhoImagem, $imagem);
 
 
-    // Enviar por e-mail
-    $mail = new PHPMailer(true);
+// Enviar por e-mail
+$mail = new PHPMailer(true);
 try {
     $pdo = new PDO("mysql:host=localhost;dbname=fluxo_tech", "root", "");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -68,7 +68,6 @@ try {
     $stmt->bindValue(":t", $telefone);
     $stmt->bindValue(":q", $qr_code);
     $stmt->execute();
-
 } catch (PDOException $e) {
     exit("Erro no banco de dados: " . $e->getMessage());
 }
@@ -98,4 +97,3 @@ try {
 } catch (Exception $e) {
     echo "Erro ao enviar e-mail: {$mail->ErrorInfo}";
 }
-?>

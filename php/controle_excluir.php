@@ -1,24 +1,15 @@
-
-
 <?php
-session_start();
-	
+	session_start();
 
+		if (isset($_POST['id_ex'])) {
 
-if(isset($_POST['id_ex']))
-{
-	
-	require '../classes/classes.php'; 
-    
-    $id_ex = $_POST['id_ex']; 
+			require '../classes/classes.php';
 
-	$u = new Usuario("fluxo_tech","localhost","root","");  
-	$u->excluirUsuario($id_ex);
+			$id_ex = $_POST['id_ex'];
 
-    header("Location: ../pages/usuarios.php");
+			$u = new Usuario("fluxo_tech", "localhost", "root", "");
+			$u->excluirUsuario($id_ex);
 
- 
-}
-
-
+			header("Location: ../pages/usuarios.php");
+		}
 ?>

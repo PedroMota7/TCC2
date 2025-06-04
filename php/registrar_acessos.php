@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="../img/logocentro.png" type="image/x-icon">
+    <title>Registrar Acesso</title>
     <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 1rem;
-      background-color: #f9f9f9;
+      background: var(--fundo);
+      background-attachment: fixed;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -54,7 +56,6 @@
 <body>
     
 <?php
-// Conexão com o banco (ajuste conforme seu XAMPP)
 $host = 'localhost';
 $db   = 'fluxo_tech';
 $user = 'root';
@@ -98,7 +99,7 @@ $acessosHoje = $stmt->fetchColumn();
 
 
 if ($acessosHoje > 0) {
-    echo "Você já registrou acesso hoje.";
+    echo "Já foi registrado o acesso de hoje.";
     exit; // para o script aqui, sem inserir de novo
 } else {
     // Insere novo acesso

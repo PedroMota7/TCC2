@@ -64,7 +64,7 @@ $listaAcessos = $stmt->fetchAll();
             </script>
         </nav>
     </header>
-    <main>
+    <main class="main-acesso">
        <h2>Últimos Acessos</h2>
     <table>
         <thead>

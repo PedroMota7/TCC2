@@ -30,9 +30,7 @@
     </header>
     <main>
         <div class="container">
-            <form id="cpfForm" action="../php/controle_cadastro_user.php" method="post"></form>
-            <form id="tel" action="../php/controle_cadastro_user.php.php" method="post"></form>
-            <form action="../php/controle_cadastro_user.php" method="post">
+            <form id="formCadastro" action="../php/controle_cadastro_user.php" method="post"></form>
                 <div class="box-cad">
                     <h1>Cadastro de Usuário</h1>
                     <br>
@@ -89,17 +87,29 @@
 
             return true;
         }
+            function validaTelefone(tel){
+                tel = tel.replace(/\D/g, '');
+                return tel.length === 10 || tel.length === 11;
+            }
 
         document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('cpfForm').addEventListener('submit', function (e) {
-                var cpf = document.getElementById('cpf').value;
-                if (!validaCPF(cpf)) {
-                    e.preventDefault();
-                    alert('CPF inválido. Verifique o número digitado.');
-                    document.getElementById('cpf').focus();
-                }
-            });
-
+            document.getElementById('formCadastro').addEventListener('submit', function (e) {
+    var cpf = document.getElementById('cpf').value;
+    var telefone = document.getElementById('telefone').value;
+    if (!validaCPF(cpf)) {
+        e.preventDefault();
+        alert('CPF inválido. Verifique o número digitado.');
+        document.getElementById('cpf').focus();
+        return;
+    }
+});
+    if (!validaTelefone(telefone)){
+        e.preventDefault();
+        alert('Telefone inválido. Insira um número válido.');
+        document.getElementById('telefone').focus();
+        return;
+    }
+});
             document.getElementById('cpf').addEventListener('input', function (e) {
                 var value = e.target.value;
                 var cpfPattern = value.replace(/\D/g, '')
@@ -109,29 +119,26 @@
                     .replace(/(-\d{2})\d+?$/, '$1');
                 e.target.value = cpfPattern;
             });
-        });
+
+            const telefoneInput = document.getElementById("telefone");
+
+            telefoneInput.addEventListener("input", function(event){
+                let value = event.target.value.replace(/\D/g, "");
+
+                if (value.length > 11){
+                    value = value.slice(0, 11);
+                }
+
+                if (value.length > 6){
+                    value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, "($1) $2-$3");
+                } else if (value.length > 2) {
+                    value = value.replace(/^(\d{2})(\d{0,5})/, "($1) $2");
+                } else {
+                    value = value.replace(/^(\d{0,2})/, "($1");
+                }
+                event.target.value = value;
+            });
     </script>
-    <script>
-        const telefoneInput = document.getElementById("telefone");
-      
-        telefoneInput.addEventListener("input", function(event) {
-          let value = event.target.value.replace(/\D/g, ""); // remove não números
-      
-          if (value.length > 11) {
-            value = value.slice(0, 11); // máximo 11 dígitos (2 DDD + 9 número)
-          }
-      
-          if (value.length > 6) {
-            value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, "($1) $2-$3");
-          } else if (value.length > 2) {
-            value = value.replace(/^(\d{2})(\d{0,5})/, "($1) $2");
-          } else {
-            value = value.replace(/^(\d{0,2})/, "($1");
-          }
-      
-          event.target.value = value;
-        });
-      </script>
       
     <footer>
         <p> # Entre em contato. <br> Telefone: (61) 93333-2254 <br> E-mail: fluxotechsystems@gmail.com <br> Endereço

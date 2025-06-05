@@ -46,7 +46,7 @@ if (isset($_POST['id']) && !empty($_POST['id'])) {
             <input class="conteudo" type="text" name="nome" value="<?php echo ($dados['NOME']); ?>">
 
             CPF:
-            <input class="conteudo" type="text" name="cpf" value="<?php echo ($dados['CPF']); ?>">
+            <input class="conteudo" type="text" name="cpf" maxlength="14" value="<?php echo ($dados['CPF']); ?>">
 
             Email:
             <input class="conteudo" type="email" name="email" value="<?php echo ($dados['EMAIL']); ?>">

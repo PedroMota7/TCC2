@@ -35,7 +35,7 @@
                     <input class="conteudo" type="text" placeholder="Insira o nome" name="nome" id="Nome" required/>
                 </div>
                 <div class="box-cad">
-                    <input class="conteudo" type="text" name="cpf" placeholder="Digite seu CPF" id="cpf" required/>
+                    <input class="conteudo" type="text" name="cpf" placeholder="Digite seu CPF" id="cpf" maxlength="14" required/>
                 </div>
                 <div class="box-cad">
                     <input class="conteudo" type="email" placeholder="Insira o Email" name="email" id="email" required/>

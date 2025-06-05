@@ -63,6 +63,6 @@
         </p>
         <img class="pe" src="../img/LogoSite.png" alt="LogoSite" height="34px">
     </footer>
-    <script src="../js/validacao_usuario.js"></script>
+    <script src="../JSext/validacao_usuario.js"></script>
 </body>
 </html>

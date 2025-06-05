@@ -30,7 +30,7 @@
     </header>
     <main>
         <div class="container">
-            <form id="formCadastro" action="../php/controle_cadastro_user.php" method="post"></form>
+            <form id="formCadastro" action="../php/controle_cadastro_user.php" method="post">
                 <div class="box-cad">
                     <h1>Cadastro de Usuário</h1>
                     <br>
@@ -41,7 +41,6 @@
                 <div class="box-cad">
                     <label for="Cpf" class="form-label"></label>
                     <input class="conteudo" type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Digite seu CPF" id="cpf" required/>
-
                 </div>
                 <div class="box-cad">
                     <label for="Email" class="form-label"></label>
@@ -65,7 +64,9 @@
             </form>
         </div>
     </main>
+
     <script>
+        // Valida CPF conforme regra padrão
         function validaCPF(cpf) {
             cpf = cpf.replace(/\D+/g, '');
             if (cpf.length !== 11) return false;
@@ -87,29 +88,35 @@
 
             return true;
         }
-            function validaTelefone(tel){
-                tel = tel.replace(/\D/g, '');
-                return tel.length === 10 || tel.length === 11;
-            }
+
+        // Valida telefone: deve ter 10 ou 11 dígitos (DDD + número)
+        function validaTelefone(tel) {
+            tel = tel.replace(/\D/g, '');
+            return tel.length === 10 || tel.length === 11;
+        }
 
         document.addEventListener('DOMContentLoaded', function () {
+            // Validação ao enviar o formulário
             document.getElementById('formCadastro').addEventListener('submit', function (e) {
-    var cpf = document.getElementById('cpf').value;
-    var telefone = document.getElementById('telefone').value;
-    if (!validaCPF(cpf)) {
-        e.preventDefault();
-        alert('CPF inválido. Verifique o número digitado.');
-        document.getElementById('cpf').focus();
-        return;
-    }
-});
-    if (!validaTelefone(telefone)){
-        e.preventDefault();
-        alert('Telefone inválido. Insira um número válido.');
-        document.getElementById('telefone').focus();
-        return;
-    }
-});
+                var cpf = document.getElementById('cpf').value;
+                var telefone = document.getElementById('telefone').value;
+
+                if (!validaCPF(cpf)) {
+                    e.preventDefault();
+                    alert('CPF inválido. Verifique o número digitado.');
+                    document.getElementById('cpf').focus();
+                    return;
+                }
+
+                if (!validaTelefone(telefone)) {
+                    e.preventDefault();
+                    alert('Telefone inválido. Insira um número válido com DDD.');
+                    document.getElementById('telefone').focus();
+                    return;
+                }
+            });
+
+            // Formata o CPF conforme digitação
             document.getElementById('cpf').addEventListener('input', function (e) {
                 var value = e.target.value;
                 var cpfPattern = value.replace(/\D/g, '')
@@ -120,24 +127,27 @@
                 e.target.value = cpfPattern;
             });
 
+            // Formata o telefone conforme digitação
             const telefoneInput = document.getElementById("telefone");
 
-            telefoneInput.addEventListener("input", function(event){
-                let value = event.target.value.replace(/\D/g, "");
+            telefoneInput.addEventListener("input", function(event) {
+                let value = event.target.value.replace(/\D/g, ""); // remove não números
 
-                if (value.length > 11){
-                    value = value.slice(0, 11);
+                if (value.length > 11) {
+                    value = value.slice(0, 11); // máximo 11 dígitos (2 DDD + 9 número)
                 }
 
-                if (value.length > 6){
+                if (value.length > 6) {
                     value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, "($1) $2-$3");
                 } else if (value.length > 2) {
                     value = value.replace(/^(\d{2})(\d{0,5})/, "($1) $2");
                 } else {
                     value = value.replace(/^(\d{0,2})/, "($1");
                 }
+
                 event.target.value = value;
             });
+        });
     </script>
       
     <footer>

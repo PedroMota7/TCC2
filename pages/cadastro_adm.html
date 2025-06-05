@@ -18,7 +18,6 @@
     </header>
     <main>
         <div class="container">
-            <form id="cnpjForm" action="../php/controle_cadastro_adm.php" method="post"></form>
             <form id="cpfForm" action="../php/controle_cadastro_adm.php" method="post" onsubmit="return validarSenhas()">
                 <div class="card-header">
                     <h2>Cadastro de Adm</h2>
@@ -37,7 +36,7 @@
                 </div>
                 <div class="box-cad">
                     <label for="cnpj" class="form-label"></label>
-                    <input class="conteudo" type="text" id="cnpj" name="cnpj" pattern="\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}" maxlength="18" placeholder="Digite seu CNPJ" id="cnpj" required>
+                   <input class="conteudo" type="text" name="cnpj" id="cnpj" maxlength="18" placeholder="Digite seu CNPJ" required>
                 </div>
                 <div class="box-cad">
                     <label for="senha" class="form-label"></label>
@@ -140,15 +139,14 @@
             return true;
         }
 
-        document.getElementById('cnpjForm').addEventListener('submit', function (e) {
-            var cnpj = document.getElementById('cnpj').value;
-            if (!validaCNPJ(cnpj)) {
-                e.preventDefault(); // Impede o envio do formulário
-                alert('CNPJ inválido. Por favor, verifique o número digitado.');
-                document.getElementById('cnpj').focus(); // Foca no campo de CNPJ após detectar erro
-            }
-        });
-
+            document.getElementById('cpfForm').addEventListener('submit', function (e) {
+    var cnpj = document.getElementById('cnpj').value;
+    if (!validaCNPJ(cnpj)) {
+        e.preventDefault();
+        alert('CNPJ inválido. Por favor, verifique o número digitado.');
+        document.getElementById('cnpj').focus();
+    }
+});
         document.getElementById('cnpj').addEventListener('input', function (e) {
             var value = e.target.value;
             var rawValue = value.replace(/\D/g, ''); // Remove tudo que não é número

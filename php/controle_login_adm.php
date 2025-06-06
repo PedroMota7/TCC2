@@ -34,7 +34,7 @@ else
 {
 	echo
 	"<script>
-            alert('Chave incorreta, tente novamente!');
+            alert('Senha incorreta, tente novamente!');
             window.location.href = '../pages/login.php';
         </script>";
 

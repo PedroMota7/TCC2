@@ -32,7 +32,19 @@ if (isset($_POST['id']) && !empty($_POST['id'])) {
         <a href="../pages/inicio.html"><img src="../img/logoSite.png" alt="logo"></a>
         <a href="../pages/inicioLOGADO.php">Início</a>
         <a href="../pages/suporte.html" class="suporte">Suporte</a>
-        <a href="encerrar.php"><button type="submit" class="btn">Sair</button></a>
+        <?php
+            
+                    if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] === 'SIM') {
+                        echo "<p>Logado</p>";
+                    } else {
+                        echo "<p>Você não está logado.</p>";
+                    }
+            ?>
+            <button class="btn" onclick="voltar()">Voltar</button>
+
+            <script>
+                function voltar() { window.history.back(); }
+            </script>
     </nav>
 </header>
 
@@ -65,7 +77,7 @@ if (isset($_POST['id']) && !empty($_POST['id'])) {
 
 <footer>
     <p> # Entre em contato. <br> Telefone: (61) 93333-2254 <br>E-mail: fluxotechsystems@gmail.com<br> Endereço Quadra 123A Rua Inês - Vale do Paraíso, DF CEP 76923-000 <br> # Copyright @2024 FluxoTech. All rights reserved. </p>
-    <img class="pe" src="../img/LogoSite.png" alt="logocentropreta" height="150px">
+    <img class="pe" src="../img/LogoSite.png" alt="logocentropreta" height="34px">
 </footer>
 <script>
     function validaCPF(cpf) {

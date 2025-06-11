@@ -33,15 +33,18 @@
     </header>
     <main>
         <div class="container">
-            <form action="">
-                <h2>Fale Conosco</h2>
-                <label for="email" class="form-label"></label>
-                <input class="conteudo" type="text" placeholder="Insira seu e-mail" class="form-control" id="email" aria-describedby="emailAdm" required>
-                <br>
-                <label for="caixa">Qual sua dúvida?</label>
-                <textarea class="conteudo" name="caixa2" id="caixa" rows="10" cols="30" placeholder="Faça sua pergunta"></textarea><br>
-                <input type="submit" value="Enviar" class="btn">
-            </form>
+    <form action="../php/env_suporte.php" method="post">
+        <label>Seu nome:</label><br>
+        <input type="text" name="nome" required /><br><br>
+
+        <label>Seu email:</label><br>
+        <input type="email" name="email" required /><br><br>
+
+
+        <label>Mensagem:</label><br>
+        <textarea name="mensagem" rows="6" required></textarea><br><br>
+
+        <button type="submit">Enviar</button>
         </div>
     </main>
 </body>

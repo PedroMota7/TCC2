@@ -32,19 +32,22 @@
         </nav>
     </header>
     <main>
+        <div class="card-header">
+            <h2>Entre em contato com FluxoTech</h2>
+        </div>
         <div class="container">
     <form action="../php/env_suporte.php" method="post">
         <label>Seu nome:</label><br>
-        <input type="text" name="nome" required /><br><br>
+        <input class="conteudo" type="text" name="nome" required /><br>
 
         <label>Seu email:</label><br>
-        <input type="email" name="email" required /><br><br>
+        <input class="conteudo" type="email" name="email" required /><br>
 
 
         <label>Mensagem:</label><br>
-        <textarea name="mensagem" rows="6" required></textarea><br><br>
+        <textarea name="mensagem" rows="6" required></textarea><br>
 
-        <button type="submit">Enviar</button>
+        <button class="btn" type="submit">Enviar</button>
         </div>
     </main>
 </body>

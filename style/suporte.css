@@ -5,6 +5,13 @@ nav {
   width: 100%;
 }
 
+.container{
+   padding: 20px;
+  font-size: medium;
+  gap: 2px;
+  width: 25%;
+}
+
 .ndireita {
   display: flex;
   align-items: center;

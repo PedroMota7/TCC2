@@ -6,14 +6,34 @@ nav {
 }
 
 .container{
+  display: flex;
+  flex-direction: column;
+
    padding: 20px;
   font-size: medium;
   gap: 2px;
   width: 25%;
+}
+h2{
+  display: flex;
+  justify-content: center;
+ margin-bottom: 20px;
 }
 
 .ndireita {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.suporte {
+  cursor: help;
+}
+
+input.conteudo{
+  margin-top: 1px;
+}
+
+form{
+  gap: 1px;
 }

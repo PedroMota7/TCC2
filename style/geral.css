@@ -52,10 +52,6 @@ nav a:nth-child(2) {
   font-size: small;
 }
 
-.suporte {
-  cursor: help;
-}
-
 a {
   display: flex;
   text-decoration: none;

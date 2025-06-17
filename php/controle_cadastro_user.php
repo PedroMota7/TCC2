@@ -23,10 +23,6 @@ $telefone = $_POST['telefone'];
 $qr_code = md5($email . time());
 $url = $qr_code;
 
-
-$qr_code = md5($email . time());
-$url = $qr_code;
-
 // Gerar imagem do QR
 $qrImageUrl = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" . urlencode($url);
 $imagem = file_get_contents($qrImageUrl);
@@ -41,20 +37,27 @@ if (!is_dir($diretorioQr)) {
 $caminhoImagem = $diretorioQr . "/qr_$qr_code.png";
 file_put_contents($caminhoImagem, $imagem);
 
-
-// Enviar por e-mail
-$mail = new PHPMailer(true);
 try {
     $pdo = new PDO("mysql:host=localhost;dbname=fluxo_tech", "root", "");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Verifica se já existe
-    $verifica = $pdo->prepare("SELECT * FROM db_use WHERE email = :email");
-    $verifica->bindValue(":email", $email);
-    $verifica->execute();
+    // Verifica se o e-mail já existe
+    $verificaEmail = $pdo->prepare("SELECT * FROM db_use WHERE email = :email");
+    $verificaEmail->bindValue(":email", $email);
+    $verificaEmail->execute();
 
-    if ($verifica->rowCount() > 0) {
-        header('Location:../pages/cadastro_user.php?ja_cadastrado');
+    if ($verificaEmail->rowCount() > 0) {
+        header('Location:../pages/cadastro_user.php?ja_cadastrado_email');
+        exit;
+    }
+
+    // Verifica se o CPF já existe
+    $verificaCPF = $pdo->prepare("SELECT * FROM db_use WHERE cpf = :cpf");
+    $verificaCPF->bindValue(":cpf", $cpf);
+    $verificaCPF->execute();
+
+    if ($verificaCPF->rowCount() > 0) {
+        header('Location:../pages/cadastro_user.php?ja_cadastrado_cpf');
         exit;
     }
 
@@ -72,15 +75,15 @@ try {
     exit("Erro no banco de dados: " . $e->getMessage());
 }
 
-// ENVIA O E-MAIL COM O QR CODE
+// Envia o e-mail com o QR Code
 $mail = new PHPMailer(true);
 
 try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'fluxotechsystems@gmail.com'; 
-    $mail->Password = 'pizk wynj fntl bqjj';         
+    $mail->Username = 'fluxotechsystems@gmail.com';
+    $mail->Password = 'pizk wynj fntl bqjj';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
@@ -97,3 +100,4 @@ try {
 } catch (Exception $e) {
     echo "Erro ao enviar e-mail: {$mail->ErrorInfo}";
 }
+?>

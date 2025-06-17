@@ -9,6 +9,30 @@
 </head>
 
 <body>
+
+<?php if (isset($_GET['erro'])): ?>
+    <div style="
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #555555;
+        color: white;
+        padding: 20px 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        text-align: center;
+    ">
+        <?php
+            if ($_GET['erro'] == 'email') echo "Email já cadastrado!";
+            if ($_GET['erro'] == 'cpf') echo "CPF já cadastrado!";
+        ?>
+    </div>
+<?php endif; ?>
+
     <header>
         <nav>
             <a href="../pages/inicio.html"><img src="../img/LogoSite.png" alt="logo"></a>
@@ -169,6 +193,8 @@
         });
     </script>
 
+
+
     <footer>
         <p> # Entre em contato. <br> Telefone: (61) 93333-2254 <br> E-mail: fluxotechsystems@gmail.com <br> Endereço
             Quadra 123A Rua Inês - Vale do Paraíso, DF CEP 76923-000 <br> # Copyright @2024 FluxoTech. All rights
@@ -176,5 +202,6 @@
         <img class="pe" src="../img/LogoSite.png" alt="LogoSite" height="34px">
     </footer>
 </body>
+
 
 </html>

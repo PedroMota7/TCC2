@@ -9,6 +9,74 @@
     <link rel="shortcut icon" href="../img/logocentro.png" type="image/x-icon">
 </head>
 <body>
+
+<?php if (isset($_GET['ja_cadastrado_email'])): ?>
+    <div id="msgBox" style="
+        position: fixed;
+        top: 20%;           /* caixa mais pra cima */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #555555;
+        color: white;
+        padding: 20px 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        text-align: center;
+    ">
+         Email Já cadastrado!
+    </div>
+
+    <script>
+        setTimeout(function(){
+            var msg = document.getElementById('msgBox');
+            if(msg){
+                msg.style.transition = "opacity 0.5s ease";
+                msg.style.opacity = '0';
+                setTimeout(function(){
+                    msg.remove();
+                }, 500);
+            }
+        }, 3000);
+    </script>
+<?php endif; ?>
+
+<?php if (isset($_GET['ja_cadastrado_cpf'])): ?>
+    <div id="msgBox" style="
+        position: fixed;
+        top: 15%;               
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #555555;
+        color: white;
+        padding: 20px 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        text-align: center;
+    ">
+       CPF Já cadastrado!
+    </div>
+
+    <script>
+        setTimeout(function(){
+            var msg = document.getElementById('msgBox');
+            if(msg){
+                msg.style.transition = "opacity 0.5s ease";
+                msg.style.opacity = '0';
+                setTimeout(function(){
+                    msg.remove();
+                }, 500);
+            }
+        }, 3000);
+    </script>
+<?php endif; ?>
+
+
     <header>
         <nav>
             <a href="InicioLOGADO.php"><img src="../img/logoSite.png" alt="logo"></a>

@@ -33,7 +33,7 @@ class usuario
             $cmd->bindValue(":e", $email);
             $cmd->bindValue(":d", $data_nasc);
             $cmd->bindValue(":t", $telefone);
-            $cmd->bindValue(":q", $qr_code); // ← Aqui está corrigido
+            $cmd->bindValue(":q", $qr_code); 
             $cmd->execute();
             return true;
         }
@@ -71,6 +71,7 @@ public function pesquisar_Para_Alterar_Usuario($id_usuario) // para uso do login
 
 class Administrador
 {
+
     private $pdo;
 
     public function __construct($dbname, $host, $user, $senha)
@@ -90,24 +91,38 @@ class Administrador
 
     public function cadastrarAdministrador($nome, $email, $cpf, $cnpj, $senha)
     {
-        // Vendo se já está cadastrado
-        $cmd = $this->pdo->prepare("SELECT * FROM adm WHERE email = :e");
+        // Verificar email
+        $cmd = $this->pdo->prepare("SELECT id FROM adm WHERE email = :e");
         $cmd->bindValue(":e", $email);
         $cmd->execute();
-        
         if ($cmd->rowCount() > 0) {
-            return false;
-        } else {
-            $cmd = $this->pdo->prepare("INSERT INTO adm(nome, email, cpf, cnpj, senha) VALUES (:n, :e, :c, :cn, :s)");
-            $cmd->bindValue(":n", $nome);
-            $cmd->bindValue(":e", $email);
-            $cmd->bindValue(":c", $cpf);
-            $cmd->bindValue(":cn", $cnpj);
-            $cmd->bindValue(":s", $senha);
-            $cmd->execute();
-            return true;
+            return "email_existente";
         }
+    
+        // Verificar CPF
+        $cmd = $this->pdo->prepare("SELECT id FROM adm WHERE cpf = :c");
+        $cmd->bindValue(":c", $cpf);
+        $cmd->execute();
+        if ($cmd->rowCount() > 0) {
+            return "cpf_existente";
+        }
+
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+    
+        // Se passou, faz o cadastro
+        $cmd = $this->pdo->prepare("INSERT INTO adm (nome, email, cpf, cnpj, senha) VALUES (:n, :e, :c, :cn, :s)");
+        $cmd->bindValue(":n", $nome);
+        $cmd->bindValue(":e", $email);
+        $cmd->bindValue(":c", $cpf);
+        $cmd->bindValue(":cn", $cnpj);
+        $cmd->bindValue(":s", $senhaHash);
+        $cmd->execute();
+    
+        return "sucesso";
     }
+    
+    
+    
     public function pesquisarAdministradorLogin($email, $senha) 
 {
     // Busca o registro

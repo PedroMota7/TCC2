@@ -4,7 +4,7 @@
 
     if (isset($_POST['chave']) && $_POST['chave'] === $chave_acesso) {
         $_SESSION['autenticado'] = true;
-        header('Location: ../pages/cadastro_adm.html');
+        header('Location: ../pages/cadastro_adm.php');
 
         exit;
     } else {

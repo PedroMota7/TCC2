@@ -36,6 +36,7 @@
         </nav>
     </header>
     <main>
+
         <div class="container">
             <div class="card-header">
                 <h2>Entre em contato</h2>
@@ -56,6 +57,38 @@
         </div>
     </main>
 </body>
+<?php if (isset($_GET['Enviado_com_sucesso'])): ?>
+    <div id="msgBox" style="
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #4CAF50;    /* Verde para sucesso */
+        color: white;
+        padding: 20px 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        text-align: center;
+    ">
+        Mensagem enviada com sucesso!
+    </div>
+
+    <script>
+        setTimeout(function(){
+            var msg = document.getElementById('msgBox');
+            if(msg){
+                msg.style.transition = "opacity 0.5s ease";
+                msg.style.opacity = '0';
+                setTimeout(function(){
+                    msg.remove();
+                }, 500);
+            }
+        }, 3000);
+    </script>
+<?php endif; ?>
 
 
 <footer>

@@ -1,17 +1,6 @@
-input.conteudo{
-   display: flex;
-   align-items: center;
-}
-
-label{
-   /* margin-top: 500%; */
-   font-size: small;
-   color: #818181;
-   margin-left: 2%;
-}
-
 .msgBox {
   position: fixed;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #555555;
@@ -23,12 +12,4 @@ label{
   font-family: Arial, sans-serif;
   font-size: 18px;
   text-align: center;
-}
-
-.msgBox.email {
-  top: 20%;
-}
-
-.msgBox.cpf {
-  top: 15%;
 }
